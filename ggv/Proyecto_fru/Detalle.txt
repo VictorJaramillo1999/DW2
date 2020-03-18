@@ -1,0 +1,11 @@
+En la siguiente carpeta, se encuentrá todo lo referente al
+proyecto GRAVI
+Un desarrollo pensado como Ecommers.
+Que intenta por medio de una Aplicación web dar el servicio
+de pedidos de matería prima y ruta de manera fácil e intuitiva.
+
+
+Teniendo el boceto de hojas, se pasará todo a limpio en un documento para comenzar
+con la implementación del sistema, terminando de detallar los requerimientos del sistema
+y su diseño
+Ing. Gustavo Gómez --- inggustavogomez60@hotmail.com

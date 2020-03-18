@@ -1,0 +1,38 @@
+
+/* custom style for login page */
+.card {    
+    padding: 15px;
+    max-width: 400px;
+    height: auto;
+    margin: 10px auto;
+    text-align: center;
+	background-color: rgba(143, 201, 240,0.5);
+}
+
+body {
+	background: url(../img/fondolog.jpg);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center center;
+	background-size: cover;
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ h1, h3 {
+    margin-top: 30px;
+}
+.btn{
+	background-color:rgb(33, 130, 239);
+	border: 1px solid rgb(59, 94, 176);
+}
+.inicio{
+	margin-top:20px;
+	
+}
+.text{
+	color: #3A2C5B;
+}

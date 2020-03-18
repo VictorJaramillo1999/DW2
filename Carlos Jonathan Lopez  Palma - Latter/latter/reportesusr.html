@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>EM - Registro</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="CSS/estilo.css" type="text/css"/>
+		<link rel="stylesheet" href="CSS/estilo-menu.css" type="text/css"/>
+		<script>
+            function fecha(){
+                semana=["Domingo","Lunes","Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+                mes=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+	            today=new Date();
+	            did=today.getDay();
+	            din=today.getDate();
+	            me=today.getMonth();
+                a=today.getFullYear();
+                var fechaa=semana[did]+", "+din+" de "+ mes[me]+" de "+a;
+                document.getElementById("dia").innerHTML="Fecha de emisión: "+fechaa;
+            }
+            window.onload=function(){fecha();}
+        </script>
+		
+    </head>
+
+    <body>
+		<div class="contenedor-menu sidebar">
+			<h2 href="#" class="btn-menu">Menú<i class=""></i></h2>
+			<ul  class="menu">
+				<li><a href="#"><i class="icono izq fa fa-home"></i>Inicio</a></li>
+				<li><a href="#"><i class="icono izq fa fa-user"></i>Usuario<i class="icono der fa fa-chevron-down"></i></a>
+					<ul>
+						<li><a href="#">Datos de contacto</a></li>
+						<li><a href="#">Modificar contraseña</a></li>
+					</ul>
+				</li>
+				<li><a href="#"><i class="icono izq fa fa-flag"></i>Reportes</a></li>
+				<li><a href="http://localhost/latter/login.html"><i class="icono izq fa fa-sign-out-alt"></i>Salir</a></li>
+			</ul>
+		</div>
+		<div class="cuerpo">
+			<div class="cabecera" style="padding: 8.5px 10px;">
+				<i class="fas fa-bars"></i>
+			</div>
+			<div class="content" style="padding: 50px;">
+                <h3 class="encabezado" align="center" style="color:#930707;">Lista de reportes</h3>
+                <hr>
+                <div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p class="label-rep">ID:</p>
+                            <div><label class="label-rep">Nombre:</label></div>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="label-rep" id="dia"></p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table class="tabla" id="t01">
+                        <tr>
+                            <th>Descripción</th><th>Fecha</th><th>Hora</th><th>Monto</th>
+                        </tr>
+                        <tr class="fila">
+                            <td class="treport">RETARDO</td><td>13/FEBRERO/2019</td><td>8:30</td><td>$10</td>
+                        </tr>
+                        <tr class="fila">
+                            <td class="treport">RETARDO</td><td>13/FEBRERO/2019</td><td>8:30</td><td>$10</td>
+                        </tr>
+                        <tr class="fila">
+                            <td class="treport">RETARDO</td><td>13/FEBRERO/2019</td><td>8:30</td><td>$10</td>
+                        </tr>  
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                        <br>
+                        <p class="label-rep" style="margin-left: 70px;">Total: $1000</p>
+                    </div>
+                </div>
+                <br>
+                <div class="" style="padding-right: 130px;">
+                    <input type="submit" value="Imprimir" class="btn boton btn-info btn-lg" onsubmit="">
+                </div>
+            </div>
+        </div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="JS/main.js"></script>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>EM - Registro</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="CSS/estilo.css" type="text/css"/>
+		<link rel="stylesheet" href="CSS/estilo-menu.css" type="text/css"/>		
+    </head>
+    
+    <body>
+        <div class="contenedor-menu sidebar">
+            <h2 href="#" class="btn-menu">Menú<i class=""></i></h2>
+            <ul  class="menu">
+                <li><a href="#"><i class="icono izq fa fa-home"></i>Inicio</a></li>
+                <li><a href="#"><i class="icono izq fa fa-user"></i>Usuario<i class="icono der fa fa-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Datos de contacto</a></li>
+                        <li><a href="#">Modificar contraseña</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="icono izq fa fa-users"></i>Empleados<i class="icono der fa fa-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="https://htmlcolorcodes.com/es/">Lista</a></li>
+                        <li><a href="#">Registro</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="icono izq fa fa-flag"></i>Reportes</a></li>
+                <li><a href="http://localhost/latter/login.html"><i class="icono izq fa fa-sign-out-alt"></i>Salir</a></li>
+            </ul>
+        </div>
+		<div class="cuerpo">
+            <div class="cabecera">
+				<i class="fas fa-bars"></i>
+			</div>
+			<div class="content">
+				<h3 class="encabezado" align="center" style="color:#005892;">Lista de Empleados</h3>
+				<br>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8 area-em">
+                        <table class="tablaem" id="t01em">
+                            <tr>
+                                <th>#</th><th>ID</th><th>Nombre(s)</th><th>Apellidos</th><th>Puesto</th><th>Correo</th><th>Teléfono</th><th>Acción</th>
+                            </tr>
+                            <tr class="filaem">
+                                <td>1</td><td>1413313</td><td>CARLOS JONATHAN</td><td>LOPEZ PALMA</td><td>EMPLEADO</td><td>clopep131@alimno.uaemex.mx</td><td>1234567890</td>
+                                <td><button class="btn btn-danger fas fa-trash-alt" onclick="remove(this)"></button></td>
+                            </tr>
+                            <tr class="filaem">
+                                <td>2</td><td>1413313</td><td>CARLOS</td><td>LOPEZ</td><td>EMPLEADO</td><td>carlos@gg.mx</td><td>1234567890</td>
+                                <td><button class="btn btn-danger fas fa-trash-alt" onclick="remove(this)"></button></td>
+                            </tr>
+                            <tr class="filaem">
+                                <td>3</td><td>1413313</td><td>CARLOS</td><td>LOPEZ</td><td>EMPLEADO</td><td>carlos@gg.mx</td><td>1234567890</td>
+                                <td><button class="btn btn-danger fas fa-trash-alt" onclick="remove(this)"></button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-4 scroll">
+                        <div class="form-group">
+                            <label class="label-emp" for="Nombre">Nombre(s)</label>
+                            <input class="input-emp" type="text" placeholder="Nombre(s)"
+                            style="text-transform: uppercase;" id="nombre"
+                            onkeypress="return soloLetras(event)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="label-emp" for="Apellido1">Apellido Paterno</label>
+                            <input class="input-emp" type="text" placeholder="Apellido Paterno"
+                                style="text-transform: uppercase;" id="app"
+                                onkeypress="return soloLetras(event)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="label-emp" for="Apellido2">Apellido Materno</label>
+                            <input class="input-emp" type="text" placeholder="Apellido Materno"
+                                style="text-transform: uppercase;" id="app"
+                                onkeypress="return soloLetras(event)">
+                        </div>
+                        <div class="form-group">
+                            <label class="label-emp" for="Teléfonol">Teléfono</label>
+                            <input class="input-emp" type="numeric" placeholder="TELÉFONO" 
+                            maxlength="10" name="tel" onkeypress="return soloNumeros(event)">
+                        </div>
+                        <div class="form-group">
+                            <label class="label-emp" for="Email">E-mail</label>
+                            <input class="input-emp" type="email" placeholder="E-MAIL" 
+                           id="email" name="email">
+                        </div>
+                        <div class="form-group">
+							<label class="label-emp" for="puesto">Puesto</label>
+							<select class="cb-emp" name="puestocb" style="text-transform: uppercase;">
+								<option value="Gerente">Gerente</option>
+								<option value="Atención al cliente">Atención al cliente</option>
+								<option value="Caja">Caja</option>
+								<option value="Administrador">Administrador</option>
+							</select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group-em">
+                                    <label class="label-emp" for="horal">Hora de entrada</label>
+                                    <input class="input-emp" type="time" id="Hora" name="hora">
+                                </div>
+                            </div>
+                            <div class="form-group-em col-md-5">
+                                <label class="label-emp" for="hora2">Hora de salida</label>
+                                <input class="input-emp" type="time" id="Hora" name="hora">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="label-emp" for="diadesc">Día de descanso</label>
+                            <select class="cb-emp" name="diadesc">
+                                <option value="lu">LUNES</option>
+                                <option value="ma">MARTES</option>
+                                <option value="mi">MIERCOLES</option>
+                                <option value="ju">JUEVES</option>
+                                <option value="vi">VIERNES</option>
+                                <option value="sa">SABADO</option>
+                                <option value="do">DOMINGO</option>
+                            </select>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="">
+                                    <input type="submit" value="Actualizar" class="btn btn-warning btn-lg" onsubmit="" style="margin-left: 35%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <br>
+			</div>
+        </div>
+        
+    </body>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="JS/main.js"></script>
+	<script src="JS/revisar.js"></script>
+	<script src="JS/alertas.js"></script>
+</html>

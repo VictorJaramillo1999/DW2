@@ -1,0 +1,148 @@
+body
+{
+	font-family: sans-serif; 
+	color: #333;
+	font-size: 1.3rem;
+	line-height: 1.4em;
+	background: #ead6ff;
+	margin: 0;
+}
+
+h2
+{
+	font-size: 2rem;
+	line-height: 1.3em;
+	text-align: center;
+	margin-top: 0;
+	background: #3147a2;
+	font-size: 40px;
+	color: #fff;
+}
+
+form
+{
+	text-align: left;
+	background: #608ed5;
+	width: 900px;
+	height: 450px;
+	border-radius: 10px;
+}
+.container
+{
+	width: 85%;
+	max-width: 850px;
+	margin: 0 auto;
+}
+.header
+{
+	background: #3147a2;
+	color: #fff;
+	padding: 1rem 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+
+}
+.header a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.logo-nav-container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.logo
+{
+	letter-spacing: 15px;
+	font-size: 40px;
+}
+.navegacion ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+	.navegacion ul li
+	{
+		display: inline-block;
+	}
+		.navegacion ul li a
+		{
+			display: block;
+			padding: 0.5rem 1rem;
+			transition: all 0.4s linear;
+			border-radius: 5px;
+		}
+			.navegacion ul li a:hover
+			{
+				background: red;
+			}
+.main
+{
+	padding-top: 8rem;
+}
+
+.botones
+{
+	width: 820px;
+	height: 300px;
+	border-radius: 5px;
+	margin: 50px;
+	background: #e2cbfc;
+}
+
+#boton1,
+#boton2,
+#boton3,
+#boton4
+{
+	margin-top: 35px;
+	text-align: center;
+	color: #000;
+	font-size: 30px;
+  	height:100px;
+  	width:400px;
+  	background-position:center;
+}
+#boton1
+{
+		background-image:url(../Imagenes/users.png);
+}
+#boton2
+{
+		background-image:url(../Imagenes/medicine.png);
+}
+#boton3
+{
+		background-image:url(../Imagenes/consulta.png);
+
+}
+#boton4
+{
+		background-image:url(../Imagenes/ventas.png);
+
+}
+#boton1:hover,
+#boton2:hover,
+#boton3:hover,
+#boton4:hover
+{
+	background: #3147a2;
+	color: #fff;		
+}
+
+.footer
+{
+	background: #3147a2;
+	padding: 4rem 0;
+	text-align: right;
+	margin-top: 3rem;
+	color: #fff;
+	font-size: 20px;	
+}

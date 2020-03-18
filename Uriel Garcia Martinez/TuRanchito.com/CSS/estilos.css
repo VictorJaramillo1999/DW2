@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/*Estilos de Fuente para todo el cuerpo, y para titulos*/
+body{
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.5px;
+}
+h1,h2,h3,h4,h5{
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 3px;
+    color: #51291E;
+    text-anchor: middle;
+    font-size: 40px;
+}
+/*Estilos del Header*/
+.header{
+    height: 70px;        
+}
+.header.contendedor{
+    display: flex;    
+}
+.logo, .icon-menu{
+    margin: 10px;
+    justify-content: space-between;
+}
+/*estilos del menu*/
+.icon-menu{
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: #1C0538;
+    color: #FFF;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    margin-left: auto;    
+    margin-top: -55px;  
+    cursor: pointer;      
+}
+
+.nav{
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    transition: all 0.5s;
+}
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu__link{
+    display: block;
+    padding: 20px;
+    background:#1C0538 ;
+    text-decoration: none;
+    color:#FFF;
+}
+.menu__link:hover {
+    background: white;
+    color: #1C0538;
+}
+.mostrar{
+    left:0;
+}
+
+.select{
+    background: white;
+    color: #1C0538;
+}
+
+
+
+@media(min-width:1600px){
+    .nav{
+        position: static;
+        width: auto;
+    }
+    .menu{
+        display: flex;
+    }
+    .header.contendedor{
+        display: flex;    
+    }
+    .icon-menu{
+        display: none;
+    }
+    .menu__link{
+        background: none;
+        color: #1C0538;
+        font-size: 20px;
+        padding: 20px;
+        margin-left: 930px;
+        margin-right: -870px;    
+        margin-top: -60px;  
+        line-height: 5px;        
+    }
+    .select{
+        background: #1C0538;
+        color:#FFF;
+    }
+
+}
+.filtro{
+    
+}
