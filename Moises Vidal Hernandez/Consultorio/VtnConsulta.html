@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-widht, initial scale=1">
+	<title>Consulta</title>
+	<link rel="stylesheet" href="CSS/EstilosVtnConsulta.CSS">
+	<link rel="icon" href="Imagenes/Logo.jpg">
+<body>
+	<header class="header">
+		<div class="container logo-nav-container">
+			<a href="#" class="logo">Softipet</a>
+			<nav class="navegacion">
+				<ul>
+					<li><a href="#">Menu Principal</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<div class="datos">
+			<center>
+			<form action="">
+				<h2>Consulta</h2>
+					<div class="labeles">
+						<p>Softipet Farmacias y algo más</p>
+						<label for="Medico">Medico</label>
+						<input type="text" name="Medico" placeholder="Medico">
+						<br>
+						<label for="Fecha">Fecha</label>
+						<input type="date" name="Fecha" min="2020-01-01" max="2050-03-04" step="1">
+						
+						<h2>Datos del paciente</h2>
+						<label for="NombrePaciente">Nombre Del Paciente</label>
+						<input type="text" name="Nombre" placeholder="Inserte Nombre">
+						<br>
+						<label for="Edad">Edad</label>
+						<input type="text" name="Edad" placeholder="Edad">
+						<label for="Sexo">Sexo</label>
+						<select name="Sexo">
+							<option value="M">Masculino</option>
+							<option value="F">Femenino</option>
+						</select>
+						<br>
+						<label for="Talla">Talla</label>
+						<input type="text" name="Talla" placeholder="Talla">
+						<label for="Peso">Peso</label>
+						<input type="text" name="Peso" placeholder="Peso">
+						<br>
+						<label for="Estatura">Estatura</label>
+						<input type="text" name="Estatura" placeholder="Estatura">
+						<br>
+						<label for="Alergias">Alergias</label>
+						<input type="text" name="Alergias" placeholder="Alergias">
+
+						<h2>Observaciones</h2>
+						<label for="Padecimeinto">Padecimiento</label>
+						<br>
+						<textarea name="Padecimiento" rows="10" cols="50">Escriba aqui</textarea>
+						<br>
+						<label for="Medicacion">Orden de medicación</label>
+						<br>
+						<textarea name="OMedicacion" rows="10" cols="50">Escriba aqui</textarea>
+					</div>
+					<div class="botones">
+						<input type="button" id="boton1" value="Aceptar">
+						<input type="button" id="boton2" value="Cancelar">
+					</div>	
+			</form>
+			</center>
+		</div>
+		</div>
+	</main>
+	<footer class="footer">Contacto: Softipet@gmail.com
+	</footer>
+</body>
+</html>

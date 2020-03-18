@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-widht, initial scale=1">
+	<title>Gestión de medicamentos</title>
+	<link rel="stylesheet" href="CSS/EstilosVtnGM.CSS">
+	<link rel="icon" href="Imagenes/Logo.jpg">
+</head>
+<body>
+	<header class="header">
+		<div class="container logo-nav-container">
+			<a href="#" class="logo">Softipet</a>
+			<nav class="navegacion">
+				<ul>
+					<li><a href="#">Menu Principal</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<div class="datos">
+			<center>
+			<form action="">
+				<h2>Gestion Medicamentos</h2>
+					<div class="labeles">
+						<h2>Datos de proteccion</h2>
+						<label for="NombreGenerico">Nombre Generico</label>
+						<input type="text" name="NombreGenerico" placeholder="Nombre Generico">
+						<br>
+						<label for="NombreComercial">Nombe Comercial</label>
+						<input type="text" name="NombreComercial" placeholder="Nombre Comercial">
+						<br>
+						<label for="Contenido">Contenido</label>
+						<input type="text" name="Contenido" placeholder="Contenido">
+						<label for="VAdministracion">Via Administracion</label>
+						<select name="VAdministracion">
+							<option value="Oral">Oral</option>
+							<option value="Sublingual">Sublingual</option>
+							<option value="Bucal">Oral</option>
+							<option value="Topica">Sublingual</option>
+							<option value="Transdermica">Transdermica</option>
+							<option value="Inhalacion">Inhalacion</option>
+							<option value="InstilacionOcu">Instilación Ocular</option>
+							<option value="Rectal">Rectal</option>
+							<option value="Vaginal">Vaginal</option>
+							<option value="Parenteral">Parenteral</option>	
+						</select>
+						<br>
+						<label for="Compocision">Compocisión</label>
+						<input type="text" name="Compocision" placeholder="Compocision">
+						<label for="Excipiente">Excipiente</label>
+						<input type="text" name="Excipiente" placeholder="Excipiente">
+						<br>
+						<h2>Datos de identificación</h2>
+						<label for="Laboratorio">Laboratorio</label>
+						<input type="text" name="Laboratorio" placeholder="Laboratorio">
+						<label for="FechaCad">Caducidad</label>
+						<input type="date" name="FechaCad" min="2020-01-01" max="2025-03-04" step="1">
+						<br>
+						<label for="NoRSan">Registro Sanitario</label>
+						<input type="text" name="NoRSan" placeholder="Registro Sanitario">
+						<label for="Lote">Lote</label>
+						<input type="text" name="Lote" placeholder="Lote">
+						
+						<br>
+						<label for="Seccion">Sección</label>
+						<input type="text" name="Seccion" placeholder="Sección">
+						<label for="Estock">Estock</label>
+						<input type="text" name="Estock" placeholder="Estock">
+					</div>
+					<div class="botones">
+						<input type="button" id="boton1" value="Buscar">
+						<input type="button" id="boton2" value="Guardar">
+						<input type="button" id="boton3" value="Eliminar">
+						<input type="button" id="boton4" value="Modifcar">
+					</div>	
+			</form>
+			</center>
+		</div>
+		</div>
+	</main>
+	<footer class="footer">Contacto: Softipet@gmail.com
+	</footer>
+</body>
+</html>
