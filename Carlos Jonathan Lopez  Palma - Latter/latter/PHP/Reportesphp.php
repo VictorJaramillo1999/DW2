@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>EM - Registro</title>
@@ -7,9 +6,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="manifest" href="/manifest.json">
-        <link rel="stylesheet" href="CSS/estilo.css" type="text/css"/>
-		<link rel="stylesheet" href="CSS/estilo-menu.css" type="text/css"/>
-
+        <link rel="stylesheet" href="/latter/CSS/estilo.css" type="text/css"/>
+		<link rel="stylesheet" href="/latter/CSS/estilo-menu.css" type="text/css"/>
     </head>
 
     <body>
@@ -40,27 +38,28 @@
 			</div>
 			<div class="content">
                 <h3 class="encabezado" align="center" style="color:#930707;">Lista de reportes</h3>
-                <hr>
-                <table class="tabla" id="t01">
-                    <tr>
-                        <th>ID</th><th>Nombre</th> <th>Descripción</th><th>Fecha</th><th>Hora</th><th>Acción</th>
-                    </tr>
-                    <tr class="fila">
-                        <td>1413313</td><td>CARLOS LÓPEZ PALMA</td> <td class="treport">RETARDO</td>
-						<td>13/FEBRERO/2019</td><td>8:30</td>
-						<td><button class="btn btn-danger fas fa-trash-alt" onclick="remove(this)"></button></td>
-                    </tr>
-                    <tr class="fila">
-						<td>1413313</td><td>CARLOS LÓPEZ PALMA</td><td class="treport">RETARDO</td>
-						<td>13/FEBRERO/2019</td><td>8:30</td>
-						<td><button class="btn btn-danger fas fa-trash-alt" onclick="remove(this)"></button></td>
-					</tr> 
-					<?php include ('PHP/Reportes.php');?>
+				<hr>
+				<div id="alerta" class="alerta"></div>
+				<div>
+					<table class="tabla" id="t01">
+						<tbody>
+                    	<tr>
+                        	<th style="width:100px;">ID</th><th style="width:650px;">Nombre</th> <th>Descripción</th><th>Fecha</th><th style="width:100px;">Hora</th><th style="width:30px;">Acción</th>
+                    	</tr>
+                    	<tr class="fila">
+                        	<td class="tdm">99</td><td>CARLOS LÓPEZ PALMA</td> <td class="treport">RETARDO</td>
+							<td>13/FEBRERO/2019</td><td>8:30</td>
+							<td><button type="button" class="btn btn-danger fas fa-trash-alt"></button></td>
+                    	</tr>
+						<?php include ('Reportes.php');?>
+					</tbody>
                 </table>
+				</div>
+                
 			</div>
         </div>
         
 	</body>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="JS/main.js"></script>
+	<script src="/latter/JS/main.js"></script>
 </html>

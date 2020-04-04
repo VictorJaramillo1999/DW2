@@ -170,6 +170,12 @@ video{
     border: 1px solid #ced1df;
     padding: 7px;
 }
+th .thm{
+    width:50px;
+}
+td .tdm{
+    width:80px;
+}
 .tabla th{
     border-bottom: 5px solid #0092b7;
     width: 20%;
