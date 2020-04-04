@@ -1,0 +1,27 @@
+Descripción General del proyecto.
+
+Nombre del Proyecto: COTIZADOR DE COBERTURAS PARA EQUIPO MÉDICO.
+
+Para este proyecto se pretende realizar una descripción general acerca de
+la empresa Bio Natura Ingeniería S.A. de C.V. dentro de la página principal.
+Cuando hablamos de descripción nos referimos al giro de la empresa, a lo que se
+dedica y como satisface las necesidades de sus clientes, dando un enfoque 
+positivo hacia los usuarios que visitan la página.
+
+Lo que buscamos:
+-Retener usuarios atraves de un sitio web llamativo y de facil comprensión.
+-Mostrar la información a clientes potenciales através del buen uso de palabras clave.
+-Cotizador fácil de usar y de entender.
+
+Como llegaremos a ello:
+El proyecto contará con 4 pestañas, donde se verán de la siguiente forma:
+1. Inicio (Página Principal).
+2. Acerca de BI.
+3. Cotizador.
+4. Contácto.
+
+**La información de la pestaña número 2 se encontrará dentro de la página 1,
+solo servirá de referencia para enviar al usuario hasta el nivel dónde se encuentra
+la descripción (Acerca de BI).
+
+
