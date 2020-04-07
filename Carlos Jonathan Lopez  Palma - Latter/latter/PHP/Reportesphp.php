@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <title>EM - Registro</title>
@@ -11,24 +15,49 @@
     </head>
 
     <body>
+	<?php
+        if (isset($_SESSION['loggedin'])) {  
+        }
+        else {
+            echo "<div class='alert alert-danger mt-4' role='alert'>
+            <h4>Inicia sesión para acceder a la pagina.</h4>
+            <p><a href='http://localhost/latter/login.html'>Iniciar sesión!</a></p></div>";
+            exit;
+        }
+        $now = time();           
+        if ($now > $_SESSION['expire']) {
+            session_destroy();
+            echo "<div class='alert alert-danger mt-4' role='alert'>
+            <h4>Tu sesión ha terminado!</h4>
+            <p><a href='http://localhost/latter/login.html'>Inicia sesión</a></p></div>";
+            exit;
+        }
+        if ($_SESSION['puesto']!="ADMINISTRADOR") {
+            session_destroy();
+            echo "<div class='alert alert-danger mt-4' role='alert'>
+            <h4>Privilegios Insuficientes!</h4>
+            <p><a href='http://localhost/latter/login.html'>Inicia sesión</a></p></div>";
+            exit;
+        }
+    ?>
 		<div class="contenedor-menu sidebar">
 			<h2 href="#" class="btn-menu">Menú<i class=""></i></h2>
 			<ul  class="menu">
-				<li><a href="#"><i class="icono izq fa fa-home"></i>Inicio</a></li>
-				<li><a href="#"><i class="icono izq fa fa-user"></i>Usuario<i class="icono der fa fa-chevron-down"></i></a>
-					<ul>
-						<li><a href="#">Datos de contacto</a></li>
-						<li><a href="#">Modificar contraseña</a></li>
-					</ul>
-				</li>
+				<li><a href="InicioAdmin.php"><i class="icono izq fa fa-home"></i>Inicio</a></li>
 				<li><a href="#"><i class="icono izq fa fa-users"></i>Empleados<i class="icono der fa fa-chevron-down"></i></a>
 					<ul>
-						<li><a href="https://htmlcolorcodes.com/es/">Lista</a></li>
-						<li><a href="#">Registro</a></li>
+						<li><a href="ListaEmpleadosPHP.php">Lista de empleados</a></li>
+						<li><a href="">Lista de reportes</a></li>
+						<li><a href="RegistroEmpleados.php">Registro de empleados</a></li>
 					</ul>
 				</li>
-				<li><a href="#"><i class="icono izq fa fa-flag"></i>Reportes</a></li>
-				<li><a href="http://localhost/latter/login.html"><i class="icono izq fa fa-sign-out-alt"></i>Salir</a></li>
+				<li><a href="#"><i class="icono izq fa fa-user"></i>Usuario<i class="icono der fa fa-chevron-down"></i></a>
+					<ul>
+						<li><a href="InfoCont.php">Información de contacto</a></li>
+						<li><a href="CambioContra.php">Modificar contraseña</a></li>
+					</ul>
+				</li>
+				<li><a href="logout.php"><i class="icono izq fa fa-sign-out-alt"></i>Salir</a></li>
 			</ul>
 		</div>
 		
@@ -47,11 +76,29 @@
                         	<th style="width:100px;">ID</th><th style="width:650px;">Nombre</th> <th>Descripción</th><th>Fecha</th><th style="width:100px;">Hora</th><th style="width:30px;">Acción</th>
                     	</tr>
                     	<tr class="fila">
-                        	<td class="tdm">99</td><td>CARLOS LÓPEZ PALMA</td> <td class="treport">RETARDO</td>
-							<td>13/FEBRERO/2019</td><td>8:30</td>
-							<td><button type="button" class="btn btn-danger fas fa-trash-alt"></button></td>
                     	</tr>
-						<?php include ('Reportes.php');?>
+						<?php
+							include("ConBD.php");
+							$con=conectar();
+							if (!$con) {
+								die("Connection failed: " . mysqli_connect_error());
+							}
+						
+							$query="SELECT p.ID, p.NOMBRE, p.APELLIDOPA, p.APELLIDOMA, r.DESCRIPCION, r.FECHA, r.HORA FROM reportes r INNER JOIN persona p ON r.IDPERSONA = p.ID";
+							$result=mysqli_query($con,$query);
+							while ($mostrar = mysqli_fetch_array($result)) {
+						?>
+								<tr class="fila">
+									<td class="tdm"><?php echo $mostrar['ID'] ?></td>
+									<td class="td"><?php echo $mostrar['NOMBRE']." ".$mostrar['APELLIDOPA']." ".$mostrar['APELLIDOMA'] ?></td>
+									<td class="treport"><?php echo $mostrar['DESCRIPCION'] ?></td>
+									<td class="td"><?php echo $mostrar['FECHA'] ?></td>
+									<td class="td"><?php echo $mostrar['HORA'] ?></td>
+									<td><button class="btn btn-danger fas fa-trash-alt"></button></td>
+								</tr>
+						<?php
+							}
+						?>
 					</tbody>
                 </table>
 				</div>

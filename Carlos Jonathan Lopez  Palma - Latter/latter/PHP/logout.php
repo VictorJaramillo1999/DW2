@@ -2,8 +2,8 @@
 
 <?php
 session_start();
-session_unset($_SESSION['email']);
+session_unset($_SESSION['name']);
 session_destroy();
 
-header('location: login.html');
+header('Location: /latter/login.html');
 ?>

@@ -44,7 +44,7 @@ function validar(){
     
     if (form.nombres.value === "") {
         document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa el Nombre.</div>';
-        form.nombre.focus();
+        form.nombres.focus();
         return false;
     }else
     if (form.app.value === "") {
@@ -79,6 +79,11 @@ function validar(){
     }
     if (!expr.test(correo)){    
         document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa un correo valido.</div>';
+        form.email.focus();
+        return false;
+    }
+    if (form.email.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa un correo.</div>';
         form.email.focus();
         return false;
     }
@@ -145,6 +150,8 @@ function validar(){
         success:function(resp){
             if(resp==="false"){
                 document.getElementById("alerta").innerHTML='<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Persona ya registrada</div>';  
+            }else if(resp==="crepetido"){
+                document.getElementById("alerta").innerHTML='<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Correo repetido</div>';  
             }else{
                 document.getElementById("alerta").innerHTML='<div class="alert alert-success"><a href="" class="close" data-dismiss="alert">&times;</a>Registro correcto</div>';  
             }
@@ -178,6 +185,122 @@ function entrada() {
     return false;
 }
 
+function validarli(){
+    var correo = document.getElementById("email").value;
+    var form = document.form1;
+    var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (form.nombres.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa el Nombre.</div>';
+        form.nombres.focus();
+        return false;
+    }
+    
+    if (!expr.test(correo)){    
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa un correo valido.</div>';
+        form.email.focus();
+        return false;
+    }
+    if (form.email.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa un correo.</div>';
+        form.email.focus();
+        return false;
+    }
+    if (form.tel.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa un telefono.</div>';
+        form.tel.focus();
+        return false;
+    }
+    if (form.hora1.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa una hora de entrada.</div>';
+        form.horae.focus();
+        return false;
+    }
+    if (form.hora2.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa una hora de salida.</div>';
+        form.horas.focus();
+        return false;
+    }
+    if (form.puesto.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Selecciona un puesto.</div>';
+        form.puesto.focus();
+        return false;
+    }
+    if (form.dia.value === "") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Selecciona un dia de descanso.</div>';
+        form.diadesc.focus();
+        return false;
+    }
+    var id = document.getElementById('id').value;
+    var tel = document.getElementById('tel').value;
+    var email = document.getElementById('email').value;
+    var puesto = document.getElementById('puesto').value;
+    var horae = document.getElementById('hora1').value;
+    var horas = document.getElementById('hora2').value;
+    var diadesc = document.getElementById('dia').value;
 
+    var dataen = 'id='+id+'&tel='+tel+'&email='+email+'&puesto='+puesto+'&horae='+horae+'&horas='+horas+'&diadesc='+diadesc;
+    
+    $.ajax({
+        type:'post',
+        url:'ActualizaInfo.php',
+        data:dataen,
+        success:function(resp){
+            if(resp==="actualizacion"){
+                document.getElementById("alerta").innerHTML='<div class="alert alert-success"><a href="" class="close" data-dismiss="alert">&times;</a>Actualización correcta.</div>';
+            }
+        }
+        
+    });
+    
+    return false;
+}
 
-    //<div class="alert alert-warning alert-dismissable">Ingresa un correo valido.</div>
+function iguales(){
+    var form = document.form1;
+    var cont = document.getElementById('conta').value;
+    var dataen = 'cont='+cont;
+    var flag=true;
+    $.ajax({
+        type:'post',
+        url:'BuscaContra.php',
+        data:dataen,
+        success:function(resp){
+            if(resp!="correcta"){
+                document.getElementById("alerta").innerHTML='<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Contraseña incorrecta.</div>';
+                flag=false;
+            }
+        }
+        
+    });
+    if(flag===true){
+        if(form.nco.value===""){
+            document.getElementById("alerta").innerHTML='<div class="alert alert-warning">La contraseña no puede estar vacia.</div>';
+            form.nco.focus();
+        }else
+        if (form.nco.value!=form.rco.value){    
+            document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Nueva contraseña no coinside.</div>';
+            form.rco.focus();
+        }else
+        if (form.nco.value === form.conta.value) {
+            document.getElementById("alerta").innerHTML='<div class="alert alert-warning">La contraseña no debe ser igual a las anteriores.</div>';
+            form.nco.focus();
+        }else{
+            cont = document.getElementById('nco').value;
+            dataen = 'cont='+cont;
+            $.ajax({
+                type:'post',
+                url:'ActualizaContr.php',
+                data:dataen,
+                success:function(resp){
+                    if(resp=="correcta"){
+                        document.getElementById("alerta").innerHTML='<div class="alert alert-success"><a href="" class="close" data-dismiss="alert">&times;</a>Contraseña actualizada.</div>';
+                    }
+                }
+            });
+            
+        }
+
+    }
+
+    return false;
+}

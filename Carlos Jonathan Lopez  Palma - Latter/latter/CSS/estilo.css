@@ -81,6 +81,17 @@ video{
     margin-bottom: 5px;
     margin-left:10px;
 }
+.control-labelnc{
+	font-family: "Helvetica Neue",Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    border-radius: 3px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-left:10px;
+}
 .control-llenarin{
 	font-family: "Helvetica Neue",Helvetica,sans-serif;
     width: 100%;
@@ -237,30 +248,41 @@ table#t01 tr:nth-child(even) {
 }
 .tablaem{
     border: 1px solid #ced1df;
-    border-collapse: collapse;
-    
-
+    margin-left: -15px;
+    margin-right: -15px;
 }
 .tablaem td{
     border: 1px solid #ced1df;
     padding: 10px 10px;
 }
+.titem{
+    text-align: center;
+    color: cadetblue;
+}
 .tablaem th{
     border: 1px solid #ced1df;
-    background-color: #dee2e6bb;
+    background-color: #85bef7;
     width: 20%;
     height: 10px;
     text-align: center;
     padding: 5px 5px;
 }
 table#t01em tr.filaem:hover{
-    background-color:#fcfbdd!important;
+    background-color:#cdebfd!important;
     border: #9fcac8 1px solid;
     cursor: pointer;
 }
 .tablaem td input{
     cursor: pointer;
 }
+.temw{
+    width: 50px;
+}
+.rw{
+    width: 95%;;
+}
+
+
 div.scroll { 
     margin:4px, 4px; 
     padding:4px; 
