@@ -25,12 +25,18 @@ h1,h2,h3,h4,h5{
 .header{
     height: 70px;        
 }
+.piedepagina{
+    height: 70px;
+    background: #1C0538;
+    color: #ffffff;    
+}
 .header.contendedor{
     display: flex;    
 }
 .logo, .icon-menu{
     margin: 10px;
     justify-content: space-between;
+
 }
 /*estilos del menu*/
 .icon-menu{
@@ -112,6 +118,11 @@ h1,h2,h3,h4,h5{
     }
 
 }
+
 .filtro{
-    
+    display: block;
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #51291E;
 }
