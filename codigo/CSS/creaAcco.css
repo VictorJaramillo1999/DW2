@@ -1,0 +1,271 @@
+*
+{
+    box-sizing: border-box;
+    
+}
+header {
+    width:100%;
+    height:120px; /* Establecemos que el header abarque el 100% del documento */
+	overflow:hidden; /* Eliminamos errores de float */
+	background:#DADFE8 ;
+	margin-bottom:0px;
+}
+ 
+.wrapper {
+    width:90%; /* Establecemos que el ancho sera del 90% */
+    height:100px;
+	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+	margin:auto; /* Centramos los elementos */
+	overflow:hidden; /* Eliminamos errores de float */
+}
+ 
+header .logo {
+	color:#f2f2f2;
+	font-size:50px;
+    line-height:100px;
+    margin-bottom: 50px;
+	float:left;
+}
+ 
+header nav {
+	float:right;
+    line-height:100px;
+    height:100px;
+}
+header nav a {
+    background-color: #285BBC;
+	display:inline-block;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 20px;
+	line-height:normal;
+	font-size:20px;
+	font-weight:bold;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+    transition:all 500ms ease;
+    border-radius: 15px;
+}
+ 
+header nav a:hover {
+    
+	background:1E4591;
+    border-radius:50px;
+    color: #fff;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background:#A6A8AD ;
+	background-size: 100vw 100vh;
+	background-attachment: fixed;
+	margin: 0;
+	font-family: sans-serif;
+	
+
+}
+div #general
+{
+	margin: auto;
+	margin-top: 0px;
+	width: 400px;
+	height: 100hv;
+}
+.imagen{
+	margin-top:7%;
+	position: absolute;
+}
+.froms{
+	position: relative;
+	margin-top: 10%;
+}
+
+form
+{
+	
+	width: 70%;
+	height: 100vh;
+	margin-left: 30%;
+	background: #FFF;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin-top: 0px;
+	-webkit-box-shadow: -19px 9px 46px -16px rgba(0,0,0,0.63);
+   -moz-box-shadow: -19px 9px 46px -16px rgba(0,0,0,0.63);
+    box-shadow: -19px 9px 46px -16px rgba(0,0,0,0.63);
+	
+}
+h2
+{  
+	color: #22E3FF;
+	text-align: left;
+	margin-left: 20px;
+	font-size: 30px;
+	margin-bottom: 20px;
+
+}
+#titulo{
+	position: relative;
+	top:30px;
+}
+.contains{
+	display: flex;
+	flex-direction:horizontal;
+	align-items: center;
+}
+.f1{
+	position: relative;
+	margin-bottom: 8px;
+	float: left;
+	width: 228px;
+	height: 96px;
+}
+
+.f1 input
+{
+	width: 90%;
+	margin: 0px;
+	margin-bottom: 0px;
+	padding: 8px;
+	box-sizing: border-box;
+	border:1px solid #22e3ff;
+	border-bottom: 1px solid #22e3ff;
+	text-indent:15px;
+	border-radius: 10px;
+	font-size: 15px;
+
+}
+
+
+
+.f2 label{
+	color: #222222;
+    font-size: 12px;
+    transition: 0.3s all;
+    font-family: 'Open Sans', sans-serif;
+	line-height: 20px;
+	margin-bottom: 0px;
+	
+}
+button
+{   
+	width: 50%;
+	margin: 10px;
+	margin-bottom: 0px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border: none;
+	border-bottom: 1px solid #22e3ff;
+	text-indent:25px;
+	font-weight: bold;
+}
+#boton1
+{   
+	
+    margin-right: 100%;
+	background:#3ECBC0;
+	color: #FFF;
+	padding:10px;
+	border-radius: 5px;
+	position: relative;
+	top: 10px;
+
+}
+#boton1:hover
+{
+	cursor: pointer;
+	background-color: #1a8292;
+}
+@media  (max-width: 768px)  {
+	.log{
+		margin: 0px;
+	}
+	div #general
+	{
+		
+		margin: 0px;
+		width:100%;
+		height: 100vh;
+	}
+form
+{
+	
+	width: 100%;
+	height: 100%;
+	margin:0px;
+	background: #FFF;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin-top: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	
+	
+}
+
+#boton1
+{   
+	
+    margin: 0px;
+	background:#3ECBC0;
+	color: #FFF;
+	padding:10px;
+	border-radius: 5px;
+	position: relative;
+	top: 10px;
+
+}
+.froms{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10%;
+}
+.f1 input
+{  
+
+	width: 100%;
+	margin: 0;
+	margin-bottom: 0px;
+	padding: 8px;
+	box-sizing: border-box;
+	border:1px solid #22e3ff;
+	border-bottom: 1px solid #22e3ff;
+	text-indent:15px;
+	border-radius: 10px;
+	font-size: 15px;
+	align-items: center;
+
+	
+
+
+}
+
+
+
+.f2 label{
+	color: #222222;
+    font-size: 12px;
+    transition: 0.3s all;
+    font-family: 'Open Sans', sans-serif;
+	line-height: 20px;
+	margin-bottom: 0px;
+	
+}
+.contains{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.imagen{
+	display:none;
+}
+
+  }	
+

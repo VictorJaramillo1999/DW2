@@ -1,0 +1,185 @@
+*
+{
+	box-sizing: border-box;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	background: url(../IMG/fondologin.jpg) no-repeat center top;
+	background-size: 100vw 100vh;
+	background-attachment: fixed;
+	margin: 0;
+	font-family: sans-serif;
+	
+
+}
+form
+{
+	
+	width: 400px;
+	height: 430px;
+	margin: auto;
+	background: #FFF;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	border-radius: 10px;
+	border: #17acc2 solid 3px;
+}
+h1
+{
+	color: #FFF;
+	text-align: center;
+	margin: 0;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+#titulo{
+	margin-top:30px;
+
+}
+h2
+{
+	color: #22E3FF;
+	text-align: center;
+	margin: 0;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+input
+{
+	width: 100%;
+	margin: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border: none;
+	border-bottom: 1px solid #22e3ff;
+	text-indent:25px;
+
+
+}
+b{
+	width: 100%;
+	margin: 10px;
+	margin-left:10%;
+	margin-top: 30px;
+	text-align: center;
+}
+button
+{
+	width: 100%;
+	margin: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 17px;
+	border: none;
+	border-bottom: 1px solid #22e3ff;
+	text-indent:25px;
+}
+label
+{
+	width: 100%;
+	margin: 10px;
+	color: #22E3FF;
+	font-size: 17px;
+	border: none;
+}
+
+#boton1
+{
+	background: #22E3FF;
+	color: #FFF;
+	padding:10px;
+	border-radius: 5px;
+	position: relative;
+	top: 10px;
+
+}
+#boton1:hover
+{
+	cursor: pointer;
+	background-color: #1a8292;
+}
+#boton2{
+
+	background:#3b5998;
+	border-bottom: 1px solid #30487a;
+	color: #FFF;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	position: relative;
+	top: 10px;
+	margin-top: 8px;
+	
+}
+#boton2:hover
+{
+	cursor: pointer;
+	background-color: #213153;
+}
+div#general
+{
+	margin: auto;
+	margin-top:20px;
+	width: 400px;
+	height: 390px;
+}
+.regis{
+	position:relative;
+	width: 100%;
+	left:10%;
+	font-size: 13px;
+}
+.regis b{
+	width: 100%;
+	margin: 10px;
+	margin-left:10%;
+	margin-top: 30px;
+	text-align: center;
+}
+.regis a{
+	margin: 0px;
+	padding-top: 0px;
+}
+@media (max-width: 480px)  {
+	div#general{
+		width: 100%;
+	}
+}
+.log div{
+	position:relative;
+	top: 5px;
+	right:310px;
+}
+
+#heart{
+	position:absolute;
+	padding: 0px;
+	border: 0px;
+	right: 1px;
+	color:#22E3FF;
+	position: relative;
+	
+}
+.far{
+	position:absolute;
+	padding: 11px;
+	right: 1px;
+	color: #A7B7AD;
+}
+.fas{
+	position:absolute;
+	padding: 11px;
+	right: 1px;
+	color: #A7B7AD;
+}
+.fab{
+	position: relative;
+	right:80px;
+	
+}

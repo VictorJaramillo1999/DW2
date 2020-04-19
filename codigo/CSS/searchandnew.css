@@ -1,0 +1,16 @@
+
+
+.seari{
+display: absolute;
+width: 50%;
+margin-left:53%;
+}
+
+
+@media (max-width: 768px)  {
+	.sear{
+        display: relative;
+        width: 100%;
+        margin:0px;
+        }
+}
