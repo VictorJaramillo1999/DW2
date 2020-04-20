@@ -1,0 +1,5 @@
+Debido a la contingencía COVID-19 se seguira trabajando en linea
+por la plataforma teamview, por medio de sesiones a las 10 de la mañana 
+todos los dias, en los cuales se veran partes de un desarrollo web
+de una api rest, desarrollada con diferentes frameworks, no es obligatorio 
+ir a las clases en linea, solo es obligatorio terminar el proyecto.
