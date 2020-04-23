@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce</title>
-    <link rel="stylesheet" href="assets/css/style-principal.css">
-    <link rel="stylesheet" href="assets/css/style-modal.css">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?=base_url?>assets/css/style-principal.css">
+    <link rel="stylesheet" href="<?=base_url?>assets/css/style-modal.css">
+    <link rel="shortcut icon" href="<?=base_url?>assets/img/favicon.ico" type="image/x-icon">
 
     <!-- bootstrap -->
 
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="logo">
-                    <img src="assets/img/nike.png" alt="" class="img-fluid">
+                    <img src="<?=base_url?>assets/img/nike.png" alt="" class="img-fluid">
                 </div>
             </header>
         </div>
