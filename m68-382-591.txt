@@ -1,5 +1,0 @@
-Debido a limitaciones con teamview hoy
-solo se podran conectar 5 personas y grabare 
-la reunion para los demass la subire a github
-id de la reunion
-m68-382-591
