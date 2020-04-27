@@ -6,9 +6,70 @@ require_once 'models/Usuario.php';
 class UsuarioController{
 
 
+    //Inicio de sesión
+    public function login(){
+
+    
+        if (isset($_POST)) {
+
+            $usuario = new Usuario();
+
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPassword($_POST['password']);
+
+            $identify = $usuario->login();
+
+            if($identify != false){
+
+                //Crear la sesión del usuario
+
+                    $_SESSION['usuario'] = $identify;
+
+            
+                    if ($identify->rol == 'admin') {
+                      $_SESSION['admin'] = true;
+                    }
+
+                  
+                    echo '<script language="javascript">alert("Haz iniciado sesión");</script>';    
+               
+            }else{
+                echo '<script language="javascript">alert("Verifica tus datos");</script>'; 
+            }
+            
+        }else{
+            echo '<script language="javascript">alert("Verifica tus datos");</script>'; 
+        }
+
+        // require_once 'views/producto/destacados.php';
+     header("Location:".base_url); 
+     ob_end_flush(); 
+    }
+
+    //Cierra sesión del usuario
+    public function logout(){
+
+        if(isset($_SESSION['usuario'])){
+            unset($_SESSION['usuario']);
+        //   session_destroy();
+    
+        if(isset($_SESSION['admin'])){
+            unset($_SESSION['admin']);
+         //    session_destroy();
+         }
+        }
+    
+         
+         require_once 'views/producto/destacados.php';
+         header("Location:".base_url);
+         ob_end_flush(); 
+    
+    }
+    
+    //registra un nuevo usuario
     public function registro(){
 
-        if($_POST){
+        if(isset($_POST)){
 
             //Recibe los datos
             $nombre= $_POST['nombre'];
@@ -30,17 +91,19 @@ class UsuarioController{
 
             if($registro==true){
     
-               echo '<script language="javascript">alert("Registro completado correctamente");</script>'; 
+               echo '<script language="javascript">alert("Registro completado correctamente");</script>';
+               
             }else{
                 echo '<script language="javascript">alert("Correo electrónico repetido");</script>'; 
             }
 
         }   
         
-       require_once 'views/producto/destacados.php';
+    
+        require_once 'views/producto/destacados.php';
+        // header("Location:".base_url);  
     }
-
 }
 
-?>
 
+?>

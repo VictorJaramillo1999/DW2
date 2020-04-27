@@ -74,6 +74,7 @@ class usuario{
         $this->imagen=$imagen;
     }
 
+    //Guarda los datos de un registro
     public function guardar(){
         
         $sql = ("INSERT INTO usuarios VALUES(null,'{$this->getNombre()}','{$this->getApellidos()}','{$this->getEmail()}','{$this->getPassword()}',null,null)");
@@ -83,6 +84,31 @@ class usuario{
 
         if($guardar==true){
            $result=true;
+        }
+
+        return $result;
+    }
+
+    //Obtiene información para el login
+    public function login(){
+        
+        $result = false;
+
+        $email = $this->email;
+        $password = $this->password;
+        
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+        $login = $this->db->query($sql);
+
+        if($login->num_rows == 1){
+            
+            $usuario = $login->fetch_object();
+            $verify = password_verify($password,$usuario->password);
+
+           
+            if ($verify == true) {
+                $result = $usuario;
+            }
         }
 
         return $result;

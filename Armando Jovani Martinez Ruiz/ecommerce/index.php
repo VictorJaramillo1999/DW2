@@ -2,6 +2,7 @@
 <div class="content">
 
     <?php
+    ob_start();
     require_once 'config/parameters.php';
     require_once 'config/DB.php';
     require_once 'autoload.php';
@@ -53,7 +54,7 @@
     // include_once('views/layout/contenido.php');
     include_once('views/layout/footer.php');
     // Otros componentes
-    include_once('views/layout/modals.php');
+    include_once('views/Usuarios/login.php');
     include_once('views/usuarios/registro.php');
 
     ?>
