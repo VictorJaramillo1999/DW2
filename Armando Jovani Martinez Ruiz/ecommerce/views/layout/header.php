@@ -7,6 +7,7 @@
     <title>E-commerce</title>
     <link rel="stylesheet" href="<?=base_url?>assets/css/style-principal.css">
     <link rel="stylesheet" href="<?=base_url?>assets/css/style-modal.css">
+    <link rel="stylesheet" href="<?=base_url?>assets/fontawesome/css/all.css">
     <link rel="shortcut icon" href="<?=base_url?>assets/img/favicon.ico" type="image/x-icon">
 
     <!-- bootstrap -->

@@ -1,3 +1,5 @@
+
+<?php require_once 'controllers/categoriaController.php'; ?>
 <!-- Inicio del menú -->
 
 <div class="row sticky-top" id="menu">
@@ -12,20 +14,19 @@
             <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?=base_url?>">Inicio <span class="sr-only">(current)</span></a>
                     </li>
+
+                    <?php 
+                     $categoria = new Categoria();
+                     $categorias = $categoria->getAll();
+
+                    while($categoria = $categorias->fetch_object()):?>
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">Hombre</a>
+                        <a class="nav-link" href="#"><?=$categoria->nombre?></a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Mujer</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Niño</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Niña</a>
-                    </li>
+                    <?php endwhile?>
+
                     <li class="nav-item">
                         <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -77,7 +78,7 @@
                            if(isset($_SESSION['usuario']) && isset($_SESSION['admin'])):
                         ?>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Editar categorias</a>
+                            <a class="dropdown-item" href="<?=base_url?>categoria/index">Gestionar categorías</a>
                             <a class="dropdown-item" href="#">Editar productos</a>
                             <a class="dropdown-item" href="#">Editar pedidos</a>
                             <div class="dropdown-divider"></div>

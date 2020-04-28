@@ -105,7 +105,7 @@ class usuario{
             $usuario = $login->fetch_object();
             $verify = password_verify($password,$usuario->password);
 
-           
+       
             if ($verify == true) {
                 $result = $usuario;
             }
