@@ -79,7 +79,7 @@
                         ?>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="<?=base_url?>categoria/index">Gestionar categorías</a>
-                            <a class="dropdown-item" href="#">Editar productos</a>
+                            <a class="dropdown-item" href="<?=base_url?>Producto/gestion">Gestionar productos</a>
                             <a class="dropdown-item" href="#">Editar pedidos</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?=base_url?>Usuario/logout">Cerrar Sesión</a>

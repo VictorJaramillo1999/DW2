@@ -29,21 +29,14 @@ class UsuarioController{
                     if ($identify->rol == 'admin') {
                       $_SESSION['admin'] = true;
                     }
-
-                  
-                    echo '<script language="javascript">alert("Haz iniciado sesión");</script>';    
                
             }else{
-                echo '<script language="javascript">alert("Verifica tus datos");</script>'; 
-            }
-            
-        }else{
-            echo '<script language="javascript">alert("Verifica tus datos");</script>'; 
+                echo '<script language="javascript">alert("Revisa nuevamente tus datos");</script>'; 
+            }   
         }
 
-        // require_once 'views/producto/destacados.php';
-     header("Location:".base_url); 
-     ob_end_flush(); 
+        header("Location:".base_url);
+        ob_end_flush(); 
     }
 
     //Cierra sesión del usuario
