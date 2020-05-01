@@ -30,10 +30,10 @@ class CategoriaController{
     
                 if($agregar ==true){
         
-                    $_SESSION['confirmado']="Categoría agregada correctamente";
-            
+                   echo '<script language="javascript">alert("Categoría agregada correctamente");</script>';
+                   
                 }else{
-                    $_SESSION['error']="Error al agregar la categoría";
+                    echo '<script language="javascript">alert("Error al agregar categoría");</script>'; 
                 }
             }   
             
@@ -42,8 +42,6 @@ class CategoriaController{
     }
 
     public function delete(){
-        Utils::isAdmin();
-        
         if(isset($_GET)){
            
             $id = $_GET['id'];
@@ -54,10 +52,10 @@ class CategoriaController{
 
             if($eliminar==true){
     
-                $_SESSION['confirmado']="Categoría eliminada ";
+                echo '<script language="javascript">alert("Registro completado correctamente");</script>';
                 
              }else{
-                $_SESSION['error'] = "No posible eliminar la categoría";
+                 echo '<script language="javascript">alert("Correo electrónico repetido");</script>'; 
              }
         }
 
@@ -70,8 +68,6 @@ class CategoriaController{
     }
     public function update(){
 
-        Utils::isAdmin();
-
         if(isset($_GET) && isset($_POST)){
             
             $id = $_GET['id'];
@@ -83,13 +79,12 @@ class CategoriaController{
 
             $update = $categoria->update();
     
-            if($update==true){
-    
-                $_SESSION['confirmado']="Categoría modificada ";
-                
-             }else{
-                $_SESSION['error'] = "Error al modificar la categoría";
-             }
+            if($update == true){
+                echo '<script language="javascript">alert("Categoría modificada correctamente");</script>';
+                    
+            }else{
+                echo '<script language="javascript">alert("Error al modificar categoría");</script>'; 
+            }
     
             header('Location:'.base_url."categoria/index");
         }

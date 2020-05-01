@@ -11,40 +11,12 @@
         <div class="col mb-5">
             <form class="form-inline" action="<?=base_url?>categoria/save" method="POST">
                 <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" name="categoria" class="form-control" placeholder="Nombre" required>
+                    <input type="text" name ="categoria" class="form-control" placeholder="Nombre" required>
                 </div>
-                <button type="submit" class="btn btn-success mb-2">Agregar categoría</button>
+                <button type="submit" class="btn btn-primary mb-2">Agregar categoría</button>
             </form>
         </div>
     </div>
-
-    <?php if(isset($_SESSION['confirmado'])):?>
-    <div class="row">
-        <div class="col-4">
-            <div class="alert alert-success" role="alert">
-                <?=$_SESSION['confirmado']?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-            </div>
-        </div>
-    </div>
-    <?php endif;
-    Utils::alertaClose();
-    ?>
-
-<?php if(isset($_SESSION['error'])):?>
-    <div class="row">
-        <div class="col-5">
-            <div class="alert alert-warning" role="alert">
-                <?=$_SESSION['error']?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-            </div>
-        </div>
-    </div>
-    <?php endif;
-    Utils::alertaClose();
-    ?>
 
     <div class="row">
         <div class="col mb-3">
@@ -54,7 +26,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Acciones</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,12 +35,8 @@
                     <tr>
                         <th scope="row"><?=$categoria->id?></th>
                         <td><?=$categoria->nombre?></td>
-                        <td><a class="text-decoration-none btn btn-primary"
-                                href="<?=base_url?>categoria/viewUpdate&id=<?=$categoria->id?>"><i
-                                    class="fas fa-pencil-alt"></i> Editar</a></td>
-                        <td><a class="text-decoration-none btn btn-danger"
-                                href="<?=base_url?>categoria/delete&id=<?=$categoria->id?>"><i
-                                    class="fas fa-trash-alt"></i> Eliminar</a></td>
+                        <td><a class="text-decoration-none" href="<?=base_url?>categoria/viewUpdate&id=<?=$categoria->id?>"><i class="fas fa-pencil-alt"></i> Editar</a></td>
+                        <td><a class="text-decoration-none" href="<?=base_url?>categoria/delete&id=<?=$categoria->id?>"><i class="fas fa-trash-alt"></i> Eliminar</a></td>
 
                     </tr>
                     <?php endwhile?>
