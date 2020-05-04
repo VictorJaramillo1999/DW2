@@ -274,11 +274,11 @@ function iguales(){
     });
     if(flag===true){
         if(form.nco.value===""){
-            document.getElementById("alerta").innerHTML='<div class="alert alert-warning">La contraseña no puede estar vacia.</div>';
+            document.getElementById("alerta").innerHTML='<div class="alert alert-warning">La contraseña no puede estar vacía.</div>';
             form.nco.focus();
         }else
         if (form.nco.value!=form.rco.value){    
-            document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Nueva contraseña no coinside.</div>';
+            document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Nueva contraseña no coincide.</div>';
             form.rco.focus();
         }else
         if (form.nco.value === form.conta.value) {
