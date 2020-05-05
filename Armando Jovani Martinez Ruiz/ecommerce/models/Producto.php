@@ -7,6 +7,7 @@ class Producto{
     private $id;
     private $categoria_id;
     private $nombre;
+    private $desc_corta;
     private $descripcion;
     private $precio;
     private $stock;
@@ -44,6 +45,14 @@ class Producto{
         $this->nombre = $this->db->real_escape_string($nombre);
     }
 
+    function getDesc_corta(){
+        return $this->desc_corta;
+    }
+
+    function setDesc_corta($desc_corta){
+        $this->desc_corta = $this->db->real_escape_string($desc_corta);
+    }
+    
     function getDescripcion(){
         return $this->descripcion;
     }
@@ -110,10 +119,11 @@ class Producto{
         $result = false;
 
         $id = $this->id ;
-        $sql= "SELECT * FROM productos WHERE id=$id;";
+       
+        $sql= "SELECT p.*, c.nombre AS 'categoria' FROM productos p INNER JOIN categorias c ON c.id=p.categoria_id WHERE p.id=$id;";
         $consulta = $this->db->query($sql);
 
-        if($consulta==true){
+        if($consulta->num_rows==1){
            $result = $consulta->fetch_object();
 
         }
@@ -122,10 +132,18 @@ class Producto{
     
     }
 
+    //Obtener productos aleatoriamente
+    public function getRand($limit){
+        $sql = "SELECT p.id, p.nombre,p.desc_corta,p.precio,p.imagen, c.nombre AS 'categoria' FROM productos p INNER JOIN categorias c ON c.id = p.categoria_id ORDER BY RAND() LIMIT $limit; ";
+        
+        $consulta = $this->db->query($sql);
+        return $consulta;
+    }
+
      //guarda los productos
     public function guardar(){
         
-        $sql = "INSERT INTO productos VALUES(null,{$this->getCategoria_id()},'{$this->getNombre()}','{$this->getDescripcion()}',{$this->getPrecio()},{$this->getStock()},null,CURDATE(),'{$this->getImagen()}')";
+        $sql = "INSERT INTO productos VALUES(null,{$this->getCategoria_id()},'{$this->getNombre()}','{$this->getDesc_corta()}','{$this->getDescripcion()}',{$this->getPrecio()},{$this->getStock()},null,CURDATE(),'{$this->getImagen()}')";
 
         $guardar = $this->db->query($sql);
 
@@ -142,7 +160,7 @@ class Producto{
         
         $result =false;
 
-        $sql = "UPDATE productos SET categoria_id={$this->getCategoria_id()},nombre='{$this->getNombre()}',descripcion='{$this->getDescripcion()}',precio={$this->getPrecio()},stock={$this->getStock()},imagen='{$this->getImagen()}' WHERE id={$this->id}";
+        $sql = "UPDATE productos SET categoria_id={$this->getCategoria_id()},nombre='{$this->getNombre()}',desc_corta='{$this->getDesc_corta()}',descripcion='{$this->getDescripcion()}',precio={$this->getPrecio()},stock={$this->getStock()},imagen='{$this->getImagen()}' WHERE id={$this->id}";
 
 
         $guardar = $this->db->query($sql);
@@ -168,6 +186,21 @@ class Producto{
      return $result;
     }
 
+    //Obtener productos por categoria
+    public function getVer(){
+
+        $result = false;
+        $id = $this->categoria_id;
+
+        $sql="SELECT p.*, c.nombre AS 'categoria' FROM productos p INNER JOIN categorias c ON c.id=p.categoria_id WHERE p.categoria_id=$id";
+
+        $consulta = $this->db->query($sql);
+
+        if($consulta->num_rows>0){
+          $result = $consulta;
+        }
+        return $result;
+    }
     
  
 

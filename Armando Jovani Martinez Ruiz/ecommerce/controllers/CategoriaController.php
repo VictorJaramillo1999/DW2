@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/categoria.php';
+require_once 'models/Producto.php';
 require_once 'helpers/utils.php';
 
 //Controlador usuario
@@ -12,6 +13,31 @@ class CategoriaController{
         $categorias = $categoria->getAll();
 
         require_once 'views/categoria/index.php';
+    }
+
+    //Visualiza los productos por categoría
+    public function ver(){
+
+        $id = $_GET['id'];
+
+        $producto = new Producto();
+        $producto->setCategoria_id($id);
+    
+        $productos = $producto->getVer();
+     
+        
+        $categoria = new Categoria();
+        $categorias = $categoria->getCategoria($id);
+         
+        if($productos == true){
+            require_once('views/producto/categorias.php');
+
+        }else{
+
+            $_SESSION['error']="No hay productos en esta categoría";
+            require_once('views/producto/categorias.php');
+        }
+     
     }
 
     public function save(){

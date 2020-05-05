@@ -23,7 +23,7 @@
 
                     while($categoria = $categorias->fetch_object()):?>
                     <li class="nav-item ">
-                        <a class="nav-link" href="#"><?=$categoria->nombre?></a>
+                        <a class="nav-link" href="<?=base_url?>categoria/ver&id=<?=$categoria->id?>"><?=$categoria->nombre?></a>
                     </li>
                     <?php endwhile?>
 

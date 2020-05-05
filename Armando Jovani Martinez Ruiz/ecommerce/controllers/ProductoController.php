@@ -1,16 +1,22 @@
 <?php
 
 require_once 'models/Producto.php';
-
+require_once 'models/categoria.php';
 //Controlador de productos
 class ProductoController{
 
-    // principal
+    // principal prodcutos destacados
     public function index(){
+        $producto = new Producto();
+        $productos = $producto->getRand(8);
+
+        $categoria = new Categoria();
+        $categorias = $categoria->getAll();
+
+
         //renderización de la vista
         require_once 'views/producto/destacados.php';
     }
-
 
     // ventana principal de la gestión de productos
     public function gestion(){
@@ -20,7 +26,6 @@ class ProductoController{
         $productos = $producto->getAll();
         require_once 'views/producto/gestion.php';
     }
-
      
     public function crear(){
         Utils::isAdmin();
@@ -34,6 +39,7 @@ class ProductoController{
 
             $nombre = $_POST['nombre'];
             $descripcion = $_POST['descripcion'];
+            $desc_corta = $_POST['desc_corta'];
             $precio = $_POST['precio'];
             $stock = $_POST['stock'];
             $categoria_id = $_POST['categoria'];
@@ -48,6 +54,7 @@ class ProductoController{
 
             $producto->setCategoria_id($categoria_id);
             $producto->setNombre($nombre);
+            $producto->setDesc_corta($desc_corta);
             $producto->setDescripcion($descripcion);
             $producto->setPrecio($precio);
             $producto->setStock($stock);
@@ -157,6 +164,20 @@ class ProductoController{
         }
 
         header('Location:'.base_url."Producto/gestion");
+    }
+
+    //Visualiza el producto de manera individual
+    public function individual(){
+        $id = $_GET['id'];
+
+        $producto = new Producto();
+        
+        $productos = $producto->getRand(3);
+        
+        $producto->setId($id);
+        $pro = $producto->getOne();
+
+        require_once 'views/Producto/individual.php';
     }
 
 

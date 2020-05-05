@@ -62,9 +62,9 @@
                     <?php while($producto = $productos->fetch_object()):?>
                     <tr>
                         <th><?=$producto->nombre?></th>
-                        <td style="max-width:200px;"><?=$producto->descripcion?></td>
-                        <td><?=$producto->precio?></td>
-                        <td><?=$producto->stock?></td>
+                        <td style="max-width:200px;"><?=$producto->desc_corta?></td>
+                        <td>$ <?=$producto->precio?></td>
+                        <td>Cant. <?=$producto->stock?></td>
                         <td><img style="width:150px" src="<?=base_url?>uploads/images/<?=$producto->imagen?>" alt=""></td>
 
 

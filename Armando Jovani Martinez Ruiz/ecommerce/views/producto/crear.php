@@ -31,6 +31,12 @@
                         value="<?=isset($pro) ? $pro->nombre : " ";?>" required>
                 </div>
                 <div class="form-group">
+                    <label for="desc">Descripción corta</label>
+                    <input type="text" name="desc_corta" class="form-control" id="desc"
+                        value="<?=isset($pro) ? $pro->desc_corta : " ";?>" required>
+                    <small id="imagenes" class="form-text text-muted">Número máximo ideal de palabras: 9.</small>
+                </div>
+                <div class="form-group">
                     <label for="descripcion">Descrición</label>
                     <textarea class="form-control" name="descripcion" id="descripcion"
                         rows="2"><?=isset($pro) ? $pro->descripcion : '';?></textarea>
@@ -73,7 +79,7 @@
                     <label for="imagenes">Selecciona una imagen </label>
                     <input type="file" name="imagen" class="form-control-file" id="imagenes"
                         <?=isset($pro)? '': 'required'?>>
-                    <small id="imagenes" class="form-text text-muted">Tamaño ideal 500x500</small>
+                    <small id="imagenes" class="form-text text-muted">Tamaño ideal 515x515</small>
                 </div>
 
                 <?php if(isset($pro)): ?>
