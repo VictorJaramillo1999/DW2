@@ -1,4 +1,3 @@
-
 <?php require_once 'controllers/categoriaController.php'; ?>
 <!-- Inicio del menú -->
 
@@ -23,7 +22,8 @@
 
                     while($categoria = $categorias->fetch_object()):?>
                     <li class="nav-item ">
-                        <a class="nav-link" href="<?=base_url?>categoria/ver&id=<?=$categoria->id?>"><?=$categoria->nombre?></a>
+                        <a class="nav-link"
+                            href="<?=base_url?>categoria/ver&id=<?=$categoria->id?>"><?=$categoria->nombre?></a>
                     </li>
                     <?php endwhile?>
 
@@ -54,8 +54,12 @@
 
                         <!-- Menu segun los tipos de usuario -->
 
-                        <?php if(!isset($_SESSION['usuario'])):?>
+                        <?php 
+                         $carritoUnidades = Utils::statsCarrito();
+                        if(!isset($_SESSION['usuario'])):?>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="<?=base_url?>Carrito/index">Mi carrito <span
+                                    class="badge badge-primary"><?=$carritoUnidades?></span></a>
                             <a class="dropdown-item" data-toggle="modal" data-target="#login" href="#">Iniciar
                                 Sesión</a>
                         </div>
@@ -67,7 +71,9 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Cuenta</a>
-                            <a class="dropdown-item" href="#">Configuración</a>
+
+                            <a class="dropdown-item" href="<?=base_url?>Carrito/index">Mi carrito <span
+                                    class="badge badge-primary"><?=$carritoUnidades?></span></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?=base_url?>Usuario/logout">Cerrar Sesión</a>
                         </div>

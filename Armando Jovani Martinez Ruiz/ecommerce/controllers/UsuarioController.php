@@ -51,9 +51,7 @@ class UsuarioController{
          //    session_destroy();
          }
         }
-    
-         
-         require_once 'views/producto/destacados.php';
+
          header("Location:".base_url);
          ob_end_flush(); 
     

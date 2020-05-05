@@ -12,7 +12,7 @@
             <span class="badge badge-success mb-5" style=" height: 30px;line-height:22px; font-size:15px">$
                 <?=$pro->precio?></span>
             <br>
-            <a href="" class="btn btn-success btn-lg btn-block">Comprar</a>
+            <a href="<?=base_url?>Carrito/add&id=<?=$pro->id?>" class="btn btn-success btn-lg btn-block">Comprar</a>
 
         </div>
     </div>
