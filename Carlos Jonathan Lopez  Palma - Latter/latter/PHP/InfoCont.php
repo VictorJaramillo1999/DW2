@@ -80,18 +80,17 @@
                     <div>
                         <br>
                         <form method="post" action="ActCoTe.php">
-                        <div class="form-group col-md-6">
-									<label class="control-label" for="Emaill">E-mail</label>
-									<input class="control-llenarin" type="email" placeholder="E-MAIL" 
+                            <div class="form-group col-md-6">
+								<label class="control-label" for="Emaill">E-mail</label>
+								<input class="control-llenarin" type="email" placeholder="E-MAIL" 
 								   id="email" name="email" value=<?php echo $mo['EMAIL'];?>>
-								</div>
+							</div>
                             <div class="form-group form-group col-md-6">
 								<label class="control-label" for="Teléfonol">Teléfono</label>
 								<input class="control-llenarin" type="numeric" placeholder="TELÉFONO" 
                                     maxlength="10" name="tel" id="tel" onkeypress="return soloNumeros(event)"
                                     value=<?php echo $mo['TELEFONO'];?>>
-								</div>
-                            </div> 
+							</div>
                             <br>
                             <div class="">
                                 <td><button class=" boton btn btn-success"> Editar</button></td>
