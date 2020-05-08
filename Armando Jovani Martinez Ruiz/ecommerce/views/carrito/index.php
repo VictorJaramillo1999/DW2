@@ -63,11 +63,26 @@
 
     <div class="row mt-4 mb-4 justify-content-around">
         <div class="col-6">
-            <a href="<?=base_url?>Carrito/add&id=<?=$pro->id?>" class="btn btn-success btn-lg btn-block">Comprar</a>
+            <a href="<?=base_url?>Pedido/add" class="btn btn-success btn-lg btn-block">Realizar el
+                pedido <i class="fas fa-box-open"></i></a>
         </div>
     </div>
     <?php else:?>
-
     <p class="text-center mb-5 mt-5 " style="font-size:50px">Carrito vacío</p>
     <?php endif?>
+
+    <?php if(isset($_SESSION['error'])):?>
+    <!-- Imprime error de iniciar sesión antes de hacer pedido -->
+    <div class="row mt-3 justify-content-around">
+        <div class="alert alert-danger" role="alert">
+            <?=$_SESSION['error']?>
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+        </div>
+    </div>
+    <?php 
+    endif;
+    Utils::alertaClose();
+    ?>
 </div>
