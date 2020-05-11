@@ -1,0 +1,11 @@
+Requiero de sus correos y de sus trabajos,
+subiré otro video donde pondré todo mi desarrollo hasta donde
+lo llevo hoy que es funcionalidad, ya con css
+requiero que lo tengan hasta ahí, para poder evaluarlos
+Nota:el que no ponga correo aqui no tendrá evaluación.
+
+el proyecto tiene que estar terminado,
+En el video que subiré, el ultimo, viene como crear base de datos desde 0
+como crear backend y frondend desde cero y js con css para la vista del frontend
+todo en framework y se desarrollaran dos componentes para una mejor explicación
+sobre el sistema GRAVI que es el desarrollo personal.

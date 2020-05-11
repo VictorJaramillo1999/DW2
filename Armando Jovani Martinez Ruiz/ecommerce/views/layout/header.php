@@ -7,6 +7,7 @@
     <title>E-commerce</title>
     <link rel="stylesheet" href="<?=base_url?>assets/css/style-principal.css">
     <link rel="stylesheet" href="<?=base_url?>assets/css/style-modal.css">
+    <link rel="stylesheet" href="<?=base_url?>assets/fontawesome/css/all.css">
     <link rel="shortcut icon" href="<?=base_url?>assets/img/favicon.ico" type="image/x-icon">
 
     <!-- bootstrap -->
@@ -24,7 +25,7 @@
         <div class="col-12">
             <header class="header">
                 <div class="promociones">
-                    <p><strong>Envios gratis</strong> en compras superiores a $900!</p>
+                    <p><strong>Aquí encontrarás los mejores productos</strong> </p>
                 </div>
 
                 <div class="logo">

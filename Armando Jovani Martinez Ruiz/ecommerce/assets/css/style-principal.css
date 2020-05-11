@@ -3,8 +3,11 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-
+    list-style: none;
+    text-decoration: none;
+    
 }
+
 
 /* División del GRID */
 /* .content{
@@ -110,21 +113,25 @@ header .logo{
     grid-gap: 50px;
 }   
 
+.products .card-body{
+    background-image: url(../img/paven.png);
+}
+
 .products .card{
     box-shadow: 2px 6px 8px #777;
     margin-bottom: 10px;
+
 }
 .products .card .price{
     font-weight: bold;
     font-size: 20px;
-    text-decoration: underline;
 }
 .products .card a{
     margin-left: 30px;
 }
 
 .products .card .btn{
-    margin: 0 3rem;
+    margin: 0 2.3rem;
 }
 
 /* Footer */
@@ -140,8 +147,20 @@ header .logo{
     color: white;
 }
 
+/*Productos individuales*/
 
+.contenedor{
 
+    box-shadow:0px 2px 5px 6px #777;
+    margin-bottom: 10px;
+
+    background-image: url(../img/pattern.png);
+}
+/* Otros*/
+
+.content{
+    background-image: url(../img/paven.png);
+}
 
 /* Estilos responsivos */
 /* ------------------------------------------ */

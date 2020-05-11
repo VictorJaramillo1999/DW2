@@ -4,47 +4,31 @@
     <h2>Productos destacados</h2>
 </div>
 
+
+
 <div class="main" id="contenido">
-    <section class="products">
-        <article class="card" style="width: 15rem; height: 30rem; ">
-            <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4 class="card-title">Nike 950</h4>
-                <p class="price"> $ 3900</p>
-                <p class="card-text">Calzado de runnig para hombre.</p>
-                <button type="button" class="btn btn-success">Comprar</button>
-            </div>
-        </article>
-        <article class="card" style="width: 15rem; height: 30rem; ">
-            <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4 class="card-title">Nike 950</h4>
-                <p class="price"> $ 3900</p>
-                <p class="card-text">Calzado de runnig para hombre.</p>
-                <button type="button" class="btn btn-success">Comprar</button>
-            </div>
-        </article>
-        <article class="card" style="width: 15rem; height: 30rem; ">
-            <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4 class="card-title">Nike 950</h4>
-                <p class="price"> $ 3900</p>
-                <p class="card-text">Calzado de runnig para hombre.</p>
-                <button type="button" class="btn btn-success">Comprar</button>
-            </div>
-        </article>
-        <article class="card" style="width: 15rem; height: 30rem; ">
-            <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h4 class="card-title">Nike 950</h4>
-                <p class="price"> $ 3900</p>
-                <p class="card-text">Calzado de runnig para hombre.</p>
-                <button type="button" class="btn btn-success">Comprar</button>
-            </div>
-        </article>
 
+    <section class="products mb-5">
 
+        <?php while ($producto = $productos->fetch_object()): ?>
+
+        <article class="card " style="width: 15rem; height: 30rem; ">
+            <img src="<?=base_url?>uploads/images/<?=$producto->imagen?>" class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <span class="badge badge-warning"><?=$producto->categoria?></span>
+                <h4 class="card-title"><?=$producto->nombre?></h4>
+                <span class="badge badge-success" style=" height: 30px;line-height:22px; font-size:15px">$
+                    <?=$producto->precio?></span>
+
+                <!-- <p class="price">$ <?=$producto->precio?></p> -->
+                <p class="card-text mb-2"><?=$producto->desc_corta?></p>
+                <a href="<?=base_url?>Producto/individual&id=<?=$producto->id?>" class="btn btn-primary">Ver
+                    producto</a>
+            </div>
+        </article>
+        <?php endwhile?>
 
     </section>
-    <!-- Fin productos -->
 </div>
+<!-- Fin productos -->

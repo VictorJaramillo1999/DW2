@@ -102,7 +102,6 @@ function validar(){
         form.nseg.focus();
         return false;
     }
-
     if (form.puesto.value === "") {
         document.getElementById("alerta2").innerHTML='<div class="alert alert-warning">Selecciona un puesto.</div>';
         form.puesto.focus();
@@ -302,5 +301,38 @@ function iguales(){
 
     }
 
+    return false;
+}
+
+function revcote(){
+    var form = document.form1;
+    if(form.email.value==="charly.palma99@gmail.com"){
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Llene todos los campos.</div>';
+        form.email.focus();
+        return false;
+    }else{
+        getRequest(
+            'ActCoTe.php'
+        );
+
+    }
+    return false;
+}
+
+function encore(){
+    var email = document.getElementById('email').value;
+    var dataen = 'email='+email;
+    $.ajax({
+        type:'post',
+        url:'PHP/RecuperaPassEnCo.php',
+        data:dataen,
+        success:function(resp){
+            alert(resp);
+            if(resp==="si"){
+                alert("Correo Enviado");
+            }
+            
+        }
+    });
     return false;
 }
