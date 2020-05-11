@@ -1,4 +1,4 @@
-Requiero de sus correos y de sus trabajos,
+﻿Requiero de sus correos y de sus trabajos,
 subiré otro video donde pondré todo mi desarrollo hasta donde
 lo llevo hoy que es funcionalidad, ya con css
 requiero que lo tengan hasta ahí, para poder evaluarlos
@@ -11,3 +11,4 @@ todo en framework y se desarrollaran dos componentes para una mejor explicación
 sobre el sistema GRAVI que es el desarrollo personal.
 
 1.-santillanbernaldanmarino@gmail.com
+2.-charly.palma99@gmail.com --- Carlos Jonathan López Palma - Latter
