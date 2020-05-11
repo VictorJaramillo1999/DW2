@@ -1,0 +1,199 @@
+body
+{
+	font-family: sans-serif; 
+	color: #333;
+	font-size: 1.3rem;
+	line-height: 1.4em;
+	background: #ead6ff;
+	margin: 0;
+}
+
+h2
+{
+	font-size: 2rem;
+	line-height: 1.3em;
+	text-align: center;
+	margin-top: 0;
+	background: #3147a2;
+	font-size: 40px;
+	color: #fff;
+}
+form
+{
+	text-align: left;
+	background: #608ed5;
+	width: 850px;
+	height: 1200px;
+	border-radius: 10px;
+}
+input
+{
+	font-size: 20px;
+	margin-bottom: 10px;
+	border: none;
+	border-bottom: 2px solid #066bb1;
+	margin-top: 5px;
+}
+label
+{
+	font-size: 20px;
+	color: #000;
+	margin-bottom: 10px;
+	margin: 4px;
+}
+select
+{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.container
+{
+	width: 85%;
+	max-width: 850px;
+	margin: 0 auto;
+
+}
+.header
+{
+	background: #3147a2;
+	color: #fff;
+	padding: 1rem 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+
+}
+.header a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.logo-nav-container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.logo
+{
+	letter-spacing: 15px;
+	font-size: 40px;
+}
+
+.navegacion ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+	.navegacion ul li
+	{
+		display: inline-block;
+	}
+		.navegacion ul li a
+		{
+			display: block;
+			padding: 0.5rem 1rem;
+			transition: all 0.4s linear;
+			border-radius: 5px;
+		}
+			.navegacion ul li a:hover
+			{
+				background: red;
+			}
+
+.main
+{
+	padding-top: 8rem;
+}
+
+.footer
+{
+	background: #3147a2;
+	padding: 4rem 0;
+	text-align: right;
+	margin-top: 20rem;
+	color: #fff;
+	font-size: 20px;
+}
+
+textarea
+{
+	margin: 20px;
+	min-height: 150px;
+	min-width: 700px;
+	max-height: 150px;
+	max-width: 700px;
+}
+@media only screen and(max-width: 787px) 
+{
+	.navegacion
+	{
+		width: 100%;
+		margin-top: 1rem;
+	}
+	.navegacion ul li
+	{
+		display: block;
+	}
+		.navegacion ul li a
+		{
+			display: block;
+			padding: 0.5rem 0;
+			transition: all 0.4s linear;
+			border-radius: 5px;
+		}
+			.navegacion ul li a:hover
+			{
+				background: #ccc;
+			}
+		
+}
+.datos
+{
+	background: #3147a2;
+	width: 850px;
+	height: 900px;
+	border-radius: 10px;
+}
+
+
+.labeles
+{
+	width: 750px;
+	height: 1000px;
+	border-radius: 5px;
+	margin: 50px;
+	background: #fff;
+}
+
+.botones
+{
+	margin: 50px;
+	width: 500px;
+	height: 50px;
+	font-size: 20px;
+	text-align: right;
+}
+#boton1,
+#boton2,
+#boton3,
+#boton4
+{
+	margin-top: 0;
+	text-align: right;
+	background: #3147A2;
+	color: #fff;
+	font-size: 30px;
+}
+#boton1:hover,
+#boton2:hover,
+#boton3:hover,
+#boton4:hover
+{
+	background: #fff;
+	color: #000;		
+}

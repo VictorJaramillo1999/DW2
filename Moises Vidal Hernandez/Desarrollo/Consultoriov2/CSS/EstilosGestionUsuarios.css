@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  	background-color: #DFDBE5;
+	font-family: Arial; 
+}
+
+
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #034bb2;
+}
+
+.header h1 {
+  font-size: 50px;
+  color: #FFF;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #49F;
+}
+.nav {
+  overflow: hidden;
+  background-color: #47F;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #e82900;
+  color: white;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.leftcolumn
+{
+  height: 1000px;
+  background: #fff;
+}
+
+.Contenedor {   
+  padding: 1px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.TituloG
+{ 
+  padding: 1px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+.btnNuevo
+{
+  background: #066bb1;
+  color: #FFF;
+  font-size: 15px;
+}
+.tablamedicos
+{
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 20px 5px;
+  border: 1px solid #3147A2;
+}
+th
+{
+   width: 5%;
+   text-align: left;
+   vertical-align: top;
+}
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  color: #FFF;
+  padding: 20px;
+  text-align: right;
+  background: #034bb2;
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
