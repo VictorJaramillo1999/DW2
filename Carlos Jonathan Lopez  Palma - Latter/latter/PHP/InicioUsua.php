@@ -33,13 +33,13 @@
             <p><a href='http://localhost/latter/login.html'>Inicia sesión</a></p></div>";
             exit;
         }
-        if ($_SESSION['puesto']=="ADMINISTRADOR") {
+        /*if ($_SESSION['puesto']=="ADMINISTRADOR") {
             session_destroy();
             echo "<div class='alert alert-danger mt-4' role='alert'>
             <h4>Privilegios Insuficientes!</h4>
             <p><a href='http://localhost/latter/login.html'>Inicia sesión</a></p></div>";
             exit;
-        }
+        }*/
 
     ?>
         <div class="main">
