@@ -41,6 +41,8 @@ class PedidoController{
             if($confirmado == true && $linea == true){
                 
                 unset($_SESSION['carrito']);
+                unset($_SESSION['total']);
+                $_SESSION['confirmado']='Compra realizada satisfactoriamente';
                 require_once 'views/carrito/index.php';     
                 
             }

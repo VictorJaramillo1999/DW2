@@ -8,8 +8,10 @@ class Categoria{
     public $nombre;
 
     private $db;
+    
     public function __construct(){
        $this->db =Database::connect();
+   
     }
 
     function getId(){
@@ -33,7 +35,6 @@ class Categoria{
         
         $sql ="SELECT * FROM categorias";
         $categorias = $this->db->query($sql);
-
         return $categorias;
     }
 

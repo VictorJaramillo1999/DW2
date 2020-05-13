@@ -202,7 +202,19 @@ class Producto{
         return $result;
     }
     
- 
+    public function getBusqueda($texto){
+
+        $sql= " SELECT p.*, c.nombre AS 'categoria'  FROM productos p INNER JOIN categorias c ON c.id=p.categoria_id WHERE p.nombre LIKE '%$texto%' OR p.descripcion LIKE '%$texto%'";
+        $consulta = $this->db->query($sql);
+
+        if($consulta->num_rows>0){
+
+            return $consulta;
+        }else{
+            return false;
+        }
+
+    }
 
 
 

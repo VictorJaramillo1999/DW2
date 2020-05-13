@@ -30,7 +30,7 @@
                 <tbody>
                     <!-- lista los productos del carrito  -->
                     <?php 
-                  
+                   $total=0;
                     foreach($_SESSION['carrito'] as $indice => $elemento):
                         $producto = $elemento['producto'];
                         ?>
@@ -52,6 +52,10 @@
 
                     </tr>
                     <?php 
+
+                    $total = $total + ($producto->precio * $elemento['unidades']);
+                    $_SESSION['total']= $total;
+                    
                     endforeach;
                     
                     ?>
@@ -60,7 +64,11 @@
         </div>
     </div>
 
-
+    <div class="row text-center">
+        <div class="col">
+            <h3>Total a pagar: <strong>$ <?=$_SESSION['total']?></strong></h3>
+        </div>
+    </div>
     <div class="row mt-4 mb-4 justify-content-around">
         <div class="col-6">
             <a href="<?=base_url?>Pedido/add" class="btn btn-success btn-lg btn-block">Realizar el
@@ -69,6 +77,21 @@
     </div>
     <?php else:?>
     <p class="text-center mb-5 mt-5 " style="font-size:50px">Carrito vacío</p>
+
+    <?php if(isset($_SESSION['confirmado'])):?>
+    <!-- Imprime error de iniciar sesión antes de hacer pedido -->
+    <div class="row mt-3 justify-content-around">
+        <div class="alert alert-success" role="alert">
+            <?=$_SESSION['confirmado']?>
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+        </div>
+    </div>
+    <?php 
+    endif;
+    Utils::alertaClose();
+    ?>
     <?php endif?>
 
     <?php if(isset($_SESSION['error'])):?>
@@ -85,4 +108,9 @@
     endif;
     Utils::alertaClose();
     ?>
+
+
+
+
+
 </div>

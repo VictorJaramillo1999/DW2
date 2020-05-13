@@ -180,6 +180,27 @@ class ProductoController{
         require_once 'views/Producto/individual.php';
     }
 
+    //realiza la busqueda de productos
+    public function busqueda(){
+
+        if(isset($_POST['buscar'])){
+            $texto = $_POST['buscar'];
+
+            $producto = new Producto();
+            $productos = $producto->getBusqueda($texto);
+    
+            if($productos != false){
+    
+               require_once 'views/Producto/busqueda.php';
+            }else{
+                $_SESSION['error']="No se encontraron productos con la busqueda: ".$texto;
+                require_once 'views/Producto/busqueda.php';
+            }
+        }else{
+            header('Location:'.base_url);
+        }
+
+    }
 
 }
 

@@ -17,7 +17,7 @@
             </div>
             <div class="col-5">
                 <label for="localidad">Municipio</label>
-                <input name= "localidad" type="text" class="form-control" required>
+                <input name="localidad" type="text" class="form-control" required>
             </div>
         </div>
 
@@ -43,9 +43,12 @@
 
         <div class="row mt-4 mb-4 justify-content-around">
             <div class="col-4">
-                <button type="submit" class="btn btn-success btn-lg btn-block">Confirmar</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Confirmar Compra</button>
             </div>
         </div>
+
     </form>
 
+    <div class="row justify-content-around">
+    </div>
 </div>

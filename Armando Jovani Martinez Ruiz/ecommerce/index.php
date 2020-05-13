@@ -13,10 +13,6 @@
     include_once('views/layout/menu.php');
     include_once('views/layout/banner.php');
     //autocarga los controladores necesarios
-    
-
-  
-
 
     //  Main - Controlador frontal 
 

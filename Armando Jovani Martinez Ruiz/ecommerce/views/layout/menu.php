@@ -28,8 +28,8 @@
                     <?php endwhile?>
 
                     <li class="nav-item">
-                        <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="form-inline my-2 my-lg-0 d-flex justify-content-center" action="<?=base_url?>Producto/busqueda" method="POST">
+                            <input class="form-control mr-sm-2" name="buscar" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                     </li>
@@ -71,7 +71,6 @@
                         if(isset($_SESSION['usuario']) && !isset($_SESSION['admin'])):?>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Cuenta</a>
 
                             <a class="dropdown-item" href="<?=base_url?>Carrito/index"><i
                                     class="fas fa-shopping-cart"></i> Mi carrito<span
