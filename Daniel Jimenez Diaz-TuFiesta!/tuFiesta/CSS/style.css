@@ -1,0 +1,31 @@
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0;
+}
+
+a{
+
+}
+
+/*estilos para el header*/
+
+.contenido-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.site-header {
+    background-color: #333333;
+    padding: 0 0 0 0;
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    /* =30px*/
+}

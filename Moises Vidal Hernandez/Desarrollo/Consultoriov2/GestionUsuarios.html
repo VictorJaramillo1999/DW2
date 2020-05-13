@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-widht, initial scale=1">
+	<title>Gestión De Usuarios</title>
+	<link rel="stylesheet" href="CSS/EstilosVtnGU.CSS">
+	<link rel="icon" href="Imagenes/Logo.jpg">
+<body>
+	<header class="header">
+		<div class="container logo-nav-container">
+			<a href="#" class="logo">Softipet</a>
+			<nav class="navegacion">
+				<ul>
+					<li><a href="#">Menu Principal</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<div class="datos">
+			<center>
+			<form action="">
+				<h2>Gestion de usuarios</h2>
+					<div class="labeles">
+						<label for="Folio">Folio</label>
+						<input type="text" name="Folio" placeholder="Inserte Folio">
+						<br>
+						<label for="CURP">CURP</label>
+						<input type="text" name="CURP" placeholder="Inserte CURP">
+						<br>
+						<label for="Nombre">Nombre</label>
+						<input type="text" name="Nombre" placeholder="Inserte Nombre">
+						<label for="Apellido Paterno">Apellido Paterno</label>
+						<input type="text" name="ApellidoPaterno" placeholder="Inserte Apellido Paterno">
+						<br>
+						<label for="Apellido Materno">Apellido Materno</label>
+						<input type="text" name="ApellidoMaterno" placeholder="Inserte Apellido Materno">
+						<label for="Telefono">Telefono</label>
+						<input type="tel" name="Telefono" placeholder="Inserte Telefono">
+						<br>
+						<label for="Fecha Nacimiento">Fecha Nacimiento</label>
+						<input type="date" name="FechaNacimiento" min="1940-01-01" max="2020-03-04" step="1">
+						<label for="Direccion">Dirección</label>
+						<input type="text" name="Direccion" placeholder="Escriba su direccion">
+						<br>
+						<label for="Codigo Postal">Codigo Postal</label>
+						<input type="text" name="CodigoPostal" placeholder="Inserte Codigo Postal">
+						<br>
+						<label for="Correo Electronico">Correo Electronico</label>
+						<input type="email" name="Correo" placeholder="Inserte Correo">
+						<label for="Cotransena">Contraseña</label>
+						<input type="password" name="Contrasena" placeholder="Inserte Contraseña">
+						<br>
+						<label for="Cargo">Cargo</label>
+						<select name="Cargo">
+							<option value="2">Medico</option>
+							<option value="3">Auxiliar Farmacia</option>
+						</select>
+						<br>
+						<label for="Cedula">Cedula Profesional</label>
+						<input type="text" name="CedulaProfesional" placeholder="Inserte Cedula Profesional">
+						<br>
+						<label for="Especialidad">Especialidad</label>
+						<input type="text" name="Especialidad" placeholder="Inserte su especialidad">
+					</div>
+					<div class="botones">
+						<input type="button" id="boton1" value="Buscar">
+						<input type="button" id="boton2" value="Guardar">
+						<input type="button" id="boton3" value="Eliminar">
+						<input type="button" id="boton4" value="Modifcar">
+					</div>	
+			</form>
+			</center>
+		</div>
+		</div>
+	</main>
+	<footer class="footer">Contacto: Softipet@gmail.com
+	</footer>
+</body>
+</html>

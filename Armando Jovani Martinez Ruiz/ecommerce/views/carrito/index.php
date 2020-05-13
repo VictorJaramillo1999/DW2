@@ -1,0 +1,116 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="title">
+                <h2>Mi carrito</h2>
+            </div>
+        </div>
+    </div>
+
+    <?php if(isset($_SESSION['carrito'])):?>
+    <div class="row mb-4">
+        <a class="text-decoration-none btn btn-danger" href="<?=base_url?>Carrito/deleteAll">Vaciar carrito</a>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-3 ">
+            <table class="table align-middle">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Detalles</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Unidades</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Acciones</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- lista los productos del carrito  -->
+                    <?php 
+                   $total=0;
+                    foreach($_SESSION['carrito'] as $indice => $elemento):
+                        $producto = $elemento['producto'];
+                        ?>
+                    <tr>
+                        <th><?=$producto->nombre?></th>
+                        <td style="max-width:200px;"><?=$producto->desc_corta?></td>
+                        <td>$ <?=$producto->precio?></td>
+                        <td>Cant. <?=$elemento['unidades']?></td>
+                        <td><img style="width:150px" src="<?=base_url?>uploads/images/<?=$producto->imagen?>" alt="">
+                        </td>
+                        <td>$ <?=$producto->precio * $elemento['unidades']?></td>
+
+                        <td>
+                            <a class="text-decoration-none btn btn-danger"
+                                href="<?=base_url?>Carrito/remove&id=<?=$producto->id?>">-</a>
+                            <a class="text-decoration-none btn btn-success"
+                                href="<?=base_url?>Carrito/add&id=<?=$producto->id?>">+</a>
+                        </td>
+
+                    </tr>
+                    <?php 
+
+                    $total = $total + ($producto->precio * $elemento['unidades']);
+                    $_SESSION['total']= $total;
+                    
+                    endforeach;
+                    
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col">
+            <h3>Total a pagar: <strong>$ <?=$_SESSION['total']?></strong></h3>
+        </div>
+    </div>
+    <div class="row mt-4 mb-4 justify-content-around">
+        <div class="col-6">
+            <a href="<?=base_url?>Pedido/add" class="btn btn-success btn-lg btn-block">Realizar el
+                pedido <i class="fas fa-box-open"></i></a>
+        </div>
+    </div>
+    <?php else:?>
+    <p class="text-center mb-5 mt-5 " style="font-size:50px">Carrito vacío</p>
+
+    <?php if(isset($_SESSION['confirmado'])):?>
+    <!-- Imprime error de iniciar sesión antes de hacer pedido -->
+    <div class="row mt-3 justify-content-around">
+        <div class="alert alert-success" role="alert">
+            <?=$_SESSION['confirmado']?>
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+        </div>
+    </div>
+    <?php 
+    endif;
+    Utils::alertaClose();
+    ?>
+    <?php endif?>
+
+    <?php if(isset($_SESSION['error'])):?>
+    <!-- Imprime error de iniciar sesión antes de hacer pedido -->
+    <div class="row mt-3 justify-content-around">
+        <div class="alert alert-danger" role="alert">
+            <?=$_SESSION['error']?>
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+        </div>
+    </div>
+    <?php 
+    endif;
+    Utils::alertaClose();
+    ?>
+
+
+
+
+
+</div>
