@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/Usuario.php';
+require_once 'controllers/ProductoController.php';
 
 //Controlador usuario
 class UsuarioController{
@@ -90,8 +91,9 @@ class UsuarioController{
 
         }   
         
-    
-        require_once 'views/producto/destacados.php';
+        $productos = new ProductoController();
+        $productos->index();
+        //require_once 'views/producto/destacados.php';
         // header("Location:".base_url);  
     }
 }

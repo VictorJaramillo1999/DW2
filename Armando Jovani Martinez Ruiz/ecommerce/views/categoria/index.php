@@ -6,7 +6,7 @@
             </div>
         </div>
     </div>
-
+  
     <div class="row">
         <div class="col mb-5">
             <form class="form-inline" action="<?=base_url?>categoria/save" method="POST">
@@ -17,7 +17,7 @@
             </form>
         </div>
     </div>
-
+   
     <?php if(isset($_SESSION['confirmado'])):?>
     <div class="row">
         <div class="col-4">
@@ -29,8 +29,8 @@
         </div>
     </div>
     <?php endif;
-    Utils::alertaClose();
     ?>
+
 
     <?php if(isset($_SESSION['error'])):?>
     <div class="row">

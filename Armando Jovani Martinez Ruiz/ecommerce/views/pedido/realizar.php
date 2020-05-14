@@ -13,11 +13,11 @@
         <div class="row justify-content-around mb-3">
             <div class="col-5">
                 <label for="provincia">Estado</label>
-                <input name="estado" type="text" class="form-control" required>
+                <input name="estado" type="text" class="form-control" pattern="^[a-zA-Z\s]+{2,254}" required>
             </div>
             <div class="col-5">
                 <label for="localidad">Municipio</label>
-                <input name="localidad" type="text" class="form-control" required>
+                <input name="localidad" type="text" class="form-control" pattern="^[a-zA-Z\s]+{2,254}" required>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
             </div>
             <div class="col-5">
                 <label for="codigo">Código Postal</label>
-                <input type="text" name="codigo" class="form-control" required>
+                <input type="text" name="codigo" class="form-control" pattern="^[0-9]+" required>
             </div>
         </div>
 

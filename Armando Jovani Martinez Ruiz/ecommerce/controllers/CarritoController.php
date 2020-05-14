@@ -18,8 +18,15 @@ class CarritoController{
 
             if(isset($_SESSION['carrito'])){    
                 foreach($_SESSION['carrito'] as $indice => $elemento){
+                
+                    $producto = $elemento['producto'];
+
                     if($elemento['id_producto'] == $producto_id){
+
+                        //Aumentará unidades siempre que sea menor que el stock
+                        if($elemento['unidades']<$producto->stock){
                          $_SESSION['carrito'][$indice]['unidades']++;
+                        }
                          $flag=true;
                     }
                 }

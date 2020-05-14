@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group col-3">
                     <label for="precio">Precio $</label>
-                    <input type="" name="precio" class="form-control " id="precio" required
+                    <input type="" name="precio" class="form-control " id="precio" paterrn="/([0-9,]+(.[0-9]{2})?)/" required
                         value="<?=isset($pro) ? $pro->precio : " ";?>">
                 </div>
 

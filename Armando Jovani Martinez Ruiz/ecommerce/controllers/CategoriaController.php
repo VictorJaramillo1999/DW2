@@ -78,12 +78,13 @@ class CategoriaController{
             $categoria->setId($id);
             $eliminar = $categoria->delete();
 
+         
             if($eliminar==true){
     
                 $_SESSION['confirmado']="Categoría eliminada ";
                 
              }else{
-                $_SESSION['error'] = "No posible eliminar la categoría";
+                $_SESSION['error'] = "No es posible eliminar la categoría ya que contiene productos";
              }
         }
 
