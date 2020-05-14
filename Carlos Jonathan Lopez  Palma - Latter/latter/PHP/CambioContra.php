@@ -57,7 +57,11 @@
 						<li><a href="">Modificar contraseña</a></li>
 					</ul>
 				</li>
-				<li><a href="ReportesUsPHP.php"><i class="icono izq fa fa-flag"></i>Reportes</a></li>
+				<?php
+                    if($_SESSION['puesto']!="ADMINISTRADOR"){
+                        echo('<li><a href="ReportesUsPHP.php"><i class="icono izq fa fa-flag"></i>Reportes</a></li>');
+                    }
+                ?>
 				<li><a href="logout.php"><i class="icono izq fa fa-sign-out-alt"></i>Salir</a></li>
 			</ul>
         </div>

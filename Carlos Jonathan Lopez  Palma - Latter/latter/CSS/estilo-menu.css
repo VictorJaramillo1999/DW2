@@ -31,6 +31,7 @@ a:link{
 	float:right;
 }
 .contenedor-menu{
+	position: absolute;
 	margin:0px;
 	display:inline-block;
 	font-family: "Helvetica Neue",Helvetica,sans-serif;

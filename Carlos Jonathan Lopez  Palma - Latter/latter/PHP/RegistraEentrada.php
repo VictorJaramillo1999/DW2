@@ -12,6 +12,7 @@
 		}
 	date_default_timezone_set('America/Mexico_City');
 	$hoy = date("Y-m-d");
+	$ayer = date("Y-m-d",strtotime('-1 day'));
 	if($existe==1){
 		$query="SELECT ESTADO, FECHA, EDO FROM asistencia WHERE IDPERSONA = '$user'";
 		$result = mysqli_query($con,$query);
@@ -19,7 +20,8 @@
 		
 		$fechabd = date("Y-m-d",strtotime($mostrar['FECHA']));
 				
-		if($mostrar['ESTADO']=="AUSENTE" & $mostrar['EDO']=="2" & $mostrar['FECHA']!=$hoy){
+		if(($mostrar['ESTADO']=="AUSENTE" & $mostrar['EDO']=="2" & $mostrar['FECHA']!=$hoy & $mostrar['FECHA']==$ayer)|
+			($mostrar['ESTADO']=="PRESENTE" & $mostrar['EDO']=="1" & $fechabd==$ayer)){
 			$query="UPDATE asistencia SET FECHA = '$hoy', EDO = '1', ESTADO = 'PRESENTE' WHERE IDPERSONA = '$user'";
 			$ejec=mysqli_query($con,$query);
 			
@@ -54,7 +56,7 @@
 					$result=mysqli_query($con,$query);
 				}
 				echo 'salida';
-			}else{
+			}else if($mostrar['ESTADO']=="AUSENTE" & $mostrar['EDO']=="2" & $fechabd==$hoy){
 				echo 'terminada';
 			}
 	}
