@@ -4,13 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Registro</title>
 </head>
 
 <body>
-    <form action="" action="">
+
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="/">
+                    <img src="img/logo.png" alt="logo" class="centrar">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <form class="sesion contenedor contenido-centrado" action="">
         <fieldset>
+            <legend>Registrarse</legend>
             <label for="email">Correo electronico</label>
             <input type="email" id="email" placeholder="Correo electronico" required autofocus>
 
@@ -25,8 +38,14 @@
             </select>
 
         </fieldset>
-        <input type="submit" value="Registrarme">
+        <input type="submit" value="Registrarme" class="boton boton-amarillo">
     </form>
+
+    <footer class="site-footer">
+        <div class="contenedor contenedor-footer">
+            <p class="copyright">Todos los Derechos Reservados 2020 &copy; </p>
+        </div>
+    </footer>
 </body>
 
 </html>
