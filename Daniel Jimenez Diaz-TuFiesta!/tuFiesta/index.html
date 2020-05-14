@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Iniciar sesión</title>
 </head>
@@ -11,17 +12,18 @@
 <body>
     <header class="site-header">
         <div class="contenedor contenido-header">
-            <div class="barra imagen">
+            <div class="barra">
                 <a href="/">
-                    <img src="img/logo.png" alt="logo">
+                    <img src="img/logo.png" alt="logo" class="centrar">
                 </a>
             </div>
         </div>
     </header>
 
     <main>
-        <form action="">
+        <form class="sesion contenedor contenido-centrado" action="">
             <fieldset>
+                <legend>Iniciar sesión</legend>
                 <!-- fieldset: nos permite organizar el contenido de un formulario -->
                 <label for="correo">Correo</label>
                 <input type="email" id="correo" placeholder="Correo electronico">
@@ -30,10 +32,15 @@
                 <input type="password" id="contraseña" placeholder="Ingresa tu contraseña">
             </fieldset>
         </form>
-
-        <input type="submit" value="Iniciar sesión">
+        <input type="submit" value="Iniciar sesión" class="boton boton-amarillo">
         <a href="registro.html">¿No tienes cuenta?, ¡registrate, aqui!</a>
     </main>
+
+    <footer class="site-footer">
+        <div class="contenedor contenedor-footer">
+            <p class="copyright">Todos los Derechos Reservados 2020 &copy; </p>
+        </div>
+    </footer>
 </body>
 
 </html>
