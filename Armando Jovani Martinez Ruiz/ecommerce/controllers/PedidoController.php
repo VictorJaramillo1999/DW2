@@ -1,6 +1,6 @@
 <?php
 require_once 'models/Pedido.php';
-require_once 'controllers/ProductoController.php';
+
 
 //Controlador de pedidos
 class PedidoController{
@@ -39,16 +39,7 @@ class PedidoController{
             $linea = $pedido->guardar_lineaPedidos();
 
             if($confirmado == true && $linea == true){
-                foreach($_SESSION['carrito'] as $indice => $elemento){
-
-                    $producto=$elemento['producto'];
-
-                    $id_producto = $producto->id;
-                    $unidades_producto = $elemento['unidades'];
-
-                    $function = new ProductoController();
-                    $function->updateStock($id_producto,$unidades_producto);
-                }
+                
                 unset($_SESSION['carrito']);
                 unset($_SESSION['total']);
                 $_SESSION['confirmado']='Compra realizada satisfactoriamente';
@@ -60,6 +51,7 @@ class PedidoController{
             require_once 'views/carrito/index.php';
         }
     }
+
 
     //Visualiza todos los pedidos
     public function ver(){
@@ -111,7 +103,7 @@ class PedidoController{
             $pedido = new Pedido();
             $pedido->setId($id);
             $productos = $pedido->getOneByUser();
-            //$paqueteria = $productos->fetch_object()->paqueteria;
+//$paqueteria = $productos->fetch_object()->paqueteria;
             require_once 'views/pedido/detalleAdmin.php';
         }else{
             header('Location:'.base_url);

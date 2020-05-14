@@ -216,11 +216,6 @@ class Producto{
 
     }
 
-    public function updateStock($id,$unidades){
-
-        $sql = "UPDATE productos SET stock=(stock-$unidades) WHERE id=$id";
-        $this->db->query($sql);
-    }
 
 
 }

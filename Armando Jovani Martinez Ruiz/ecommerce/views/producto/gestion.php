@@ -25,6 +25,7 @@
         </div>
     </div>
     <?php endif;
+    Utils::alertaClose();
     ?>
 
     <?php if(isset($_SESSION['error'])):?>
