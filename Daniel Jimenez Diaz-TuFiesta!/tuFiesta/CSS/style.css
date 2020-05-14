@@ -1,12 +1,63 @@
+/*Globales: codigo que se usara con frecuencia*/
+
+.contenedor-vertical {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
 .contenedor {
-    width: 95%;
+    width: 100%;
     max-width: 120rem;
-    margin: 0;
+    margin: 0 auto;
 }
 
-a{
-
+img {
+    max-width: 100%;
+    /*codigo para que las imagenes se acoplen a su contenedor.*/
 }
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.0rem;
+    line-height: 1.5;
+}
+
+
+/*Botones*/
+
+.boton {
+    color: #ffffff;
+    font-weight: 50;
+    text-decoration: none;
+    font-size: 1.0rem;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    display: block;
+    flex: 0 0 100%;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton-amarillo {
+    background-color: #e08709;
+    border-radius: 1rem;
+    align-self: center;
+}
+
+
+/*utilidades*/
+
+.contenido-centrado {
+    max-width: 800px;
+}
+
 
 /*estilos para el header*/
 
@@ -15,17 +66,93 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .site-header {
-    background-color: #333333;
-    padding: 0 0 0 0;
+    background-color: yellowgreen;
+    padding: 1rem 0 1rem 0;
+    padding-left: 2rem;
 }
 
-.barra {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 3rem;
-    /* =30px*/
+
+/*estilos para el cuadro de inicio de sesión*/
+
+.sesion p {
+    font-size: 1.4rem;
+    color: #4f4f4f;
+    margin: 2rem 0 0 0;
+}
+
+legend {
+    font-size: 2rem;
+    text-align: center;
+}
+
+label {
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    /*block: alinea el contenido hacia abajo*/
+}
+
+input:not([type="submit"]),
+textarea,
+select {
+    padding: 1rem;
+    display: block;
+    width: 50%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 2rem;
+}
+
+textarea {
+    height: 20rem;
+}
+
+
+/*estilos para el footer*/
+
+.site-footer {
+    background-color: yellowgreen;
+    margin: 0;
+}
+
+.contenedor-footer {
+    padding: 3.5rem 0;
+    text-align: right;
+}
+
+.copyright {
+    margin: 0;
+    color: #111111;
+}
+
+
+/*Estilos para la barra lateral de botones*/
+
+#navegador ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#navegador li {
+    display: inline;
+    text-align: center;
+    margin: 0 1rem 0 0;
+}
+
+#navegador li a {
+    padding: 0.2rem 0.7rem;
+    color: #666666;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    text-decoration: none;
+}
+
+#navegador li a:hover {
+    background-color: #333333;
+    color: #ffffff;
 }
