@@ -1,8 +1,8 @@
 #Activar rewrite
 
 RewriteEngine on
-ErrorDocument 404 http://localhost/ecommerce/error/
 
+ErrorDocument 404 https://localhost/ecommerce/error/
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 

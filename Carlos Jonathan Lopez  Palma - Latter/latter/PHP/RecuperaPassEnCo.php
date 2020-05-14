@@ -3,11 +3,7 @@
         $mail = new PHPMailer();
         $mail->IsSMTP();
 
-		include("ConBD.php");
-		$con=conectar();
-
-
-
+        $correo = $_POST['email'];
         //Configuracion servidor mail
         $mail->From = "latter.proyecto@gmail.com"; //remitente
         $mail->SMTPAuth = true;
@@ -19,19 +15,19 @@
 
 
         //Agregar destinatario
-        $mail->AddAddress($email);
+        $mail->AddAddress($correo);
+        $mail->isHTML(TRUE);
         $mail->Subject = 'Recuperar contraseña';
-        $mail->Body = "Siga esta ruta para cambiar su contraseña:";
-    
+        $mail->Body = '<h3>Latter</h3>
+        <h4>Siga esta ruta para cambiar su contraseña: <a href="http://localhost/latter/PHP/NuevaPass.php">Cambiar Contraseña</a></h4>';
         //Avisar si fue enviado o no y dirigir al index
         if ($mail->Send()) {
-            echo'<script type="text/javascript">
-                alert("Enviado Correctamente");
-                </script>';
+            echo'si';
+            header('Location: /Latter/login.html');
         } else {
-            echo'<script type="text/javascript">
-                alert("NO ENVIADO, intentar de nuevo");
-                </script>';
+            echo'no';
+            header('Location: /Latter/login.html');
+
         }
     
 ?>

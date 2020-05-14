@@ -1,4 +1,3 @@
-
 <?php require_once 'controllers/categoriaController.php'; ?>
 <!-- Inicio del menú -->
 
@@ -23,13 +22,14 @@
 
                     while($categoria = $categorias->fetch_object()):?>
                     <li class="nav-item ">
-                        <a class="nav-link" href="<?=base_url?>categoria/ver&id=<?=$categoria->id?>"><?=$categoria->nombre?></a>
+                        <a class="nav-link"
+                            href="<?=base_url?>categoria/ver&id=<?=$categoria->id?>"><?=$categoria->nombre?></a>
                     </li>
                     <?php endwhile?>
 
                     <li class="nav-item">
-                        <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="form-inline my-2 my-lg-0 d-flex justify-content-center" action="<?=base_url?>Producto/busqueda" method="POST">
+                            <input class="form-control mr-sm-2" name="buscar" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                         </form>
                     </li>
@@ -54,8 +54,13 @@
 
                         <!-- Menu segun los tipos de usuario -->
 
-                        <?php if(!isset($_SESSION['usuario'])):?>
+                        <?php 
+                         $carritoUnidades = Utils::statsCarrito();
+                        if(!isset($_SESSION['usuario'])):?>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="<?=base_url?>Carrito/index"><i
+                                    class="fas fa-shopping-cart"></i> Mi carrito <span
+                                    class="badge badge-primary"><?=$carritoUnidades?></span></a>
                             <a class="dropdown-item" data-toggle="modal" data-target="#login" href="#">Iniciar
                                 Sesión</a>
                         </div>
@@ -66,8 +71,11 @@
                         if(isset($_SESSION['usuario']) && !isset($_SESSION['admin'])):?>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Cuenta</a>
-                            <a class="dropdown-item" href="#">Configuración</a>
+
+                            <a class="dropdown-item" href="<?=base_url?>Carrito/index"><i
+                                    class="fas fa-shopping-cart"></i> Mi carrito<span
+                                    class="badge badge-primary"><?=$carritoUnidades?></span></a>
+                            <a class="dropdown-item" href="<?=base_url?>Pedido/ver">Mis pedidos</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?=base_url?>Usuario/logout">Cerrar Sesión</a>
                         </div>
@@ -78,9 +86,9 @@
                            if(isset($_SESSION['usuario']) && isset($_SESSION['admin'])):
                         ?>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?=base_url?>categoria/index">Gestionar categorías</a>
-                            <a class="dropdown-item" href="<?=base_url?>Producto/gestion">Gestionar productos</a>
-                            <a class="dropdown-item" href="#">Editar pedidos</a>
+                            <a class="dropdown-item" href="<?=base_url?>categoria/index">Categorías</a>
+                            <a class="dropdown-item" href="<?=base_url?>Producto/gestion">Productos</a>
+                            <a class="dropdown-item" href="<?=base_url?>Pedido/ver">Pedidos</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?=base_url?>Usuario/logout">Cerrar Sesión</a>
                         </div>

@@ -25,7 +25,7 @@
         <div class="col-12">
             <header class="header">
                 <div class="promociones">
-                    <p><strong>Envios gratis</strong> en compras superiores a $900!</p>
+                    <p><strong>Los mejores productos están aquí</strong> </p>
                 </div>
 
                 <div class="logo">

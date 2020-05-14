@@ -111,23 +111,23 @@
                         <div class="form-group">
                             <label class="label-emp" for="Email">Correo</label>
                             <input class="input-emp" type="email" placeholder="E-MAIL" 
-                           id="email">
+								id="email" required>
                         </div>
                         <div class="form-group">
                             <label class="label-emp" for="Teléfonol">Teléfono</label>
                             <input class="input-emp" type="numeric" placeholder="TELÉFONO" 
-                            maxlength="10" id="tel" onkeypress="return soloNumeros(event)">
+								maxlength="10" id="tel" onkeypress="return soloNumeros(event)" required>
                         </div>
                         <div class="form-group row rw">
                             <div class="col-md-6">
                                 <div class="form-group-em">
                                     <label class="label-emp" for="horal">Hora de entrada</label>
-                                    <input class="input-emp" type="time" id="hora1" name="hora1">
+                                    <input class="input-emp" type="time" id="hora1" name="hora1" required>
                                 </div>
                             </div>
                             <div class="form-group-em col-md-6">
                                 <label class="label-emp" for="hora2">Hora de salida</label>
-                                <input class="input-emp" type="time" id="hora2" name="hora2">
+                                <input class="input-emp" type="time" id="hora2" name="hora2" required>
                             </div>
                         </div>
                         <div class="form-group">

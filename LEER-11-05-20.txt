@@ -1,0 +1,23 @@
+﻿Requiero de sus correos y de sus trabajos,
+subiré otro video donde pondré todo mi desarrollo hasta donde
+lo llevo hoy que es funcionalidad, ya con css
+requiero que lo tengan hasta ahí, para poder evaluarlos
+Nota:el que no ponga correo aqui no tendrá evaluación.
+
+el proyecto tiene que estar terminado,
+En el video que subiré, el ultimo, viene como crear base de datos desde 0
+como crear backend y frondend desde cero y js con css para la vista del frontend
+todo en framework y se desarrollaran dos componentes para una mejor explicación
+sobre el sistema GRAVI que es el desarrollo personal.
+
+1.-santillanbernaldanmarino@gmail.com
+2.-charly.palma99@gmail.com --- Carlos Jonathan López Palma - Latter
+3.- elfegoadair@gmail.com (Elfego Adair Juárez Arias "S6")
+4. armando.martinez.1738@gmail.com --- Armando Jovani Martinez Ruiz
+5.- mxsrxm@gmail.com --- Aldo Misraim Hernández González
+6.raul_012006@hotmail.com --- Raúl Emmanuel Vilchis García
+7. estefaniamejia736@gmail.com -- Estefanía Cristina Mejía Reyes
+8.arelilarasil@gmail.com ---Areli Lara Silva
+9.   e32liexer@gmail.com ---- Haniel Eliezer Victoriano Robles(s6)
+10. moshpsy@gmail.com --- Moises Vidal Hernandez(s5)
+11. david-velazquez@live.com.mx --- David Velázquez Ramírez (S5) 

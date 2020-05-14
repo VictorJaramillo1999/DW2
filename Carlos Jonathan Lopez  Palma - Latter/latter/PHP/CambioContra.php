@@ -37,7 +37,20 @@
 		<div class="contenedor-menu sidebar">
 			<h2 href="#" class="btn-menu">Menú<i class=""></i></h2>
 			<ul  class="menu">
-				<li><a href="InicioUsua.php"><i class="icono izq fa fa-home"></i>Inicio</a></li>
+				<?php 
+					if($_SESSION['puesto']=="ADMINISTRADOR"){
+						echo '<li><a href="InicioAdmin.php"><i class="icono izq fa fa-home"></i>Inicio</a></li>';
+						echo '<li><a href="#"><i class="icono izq fa fa-users"></i>Empleados<i class="icono der fa fa-chevron-down"></i></a>
+							<ul>
+								<li><a href="ListaEmpleadosPHP.php">Lista de empleados</a></li>
+								<li><a href="Reportesphp.php">Lista de reportes</a></li>
+								<li><a href="">Registro de empleados</a></li>
+							</ul>
+						</li>';
+					}else{
+						echo '<li><a href="InicioUsua.php"><i class="icono izq fa fa-home"></i>Inicio</a></li>';
+					}
+				?>
 				<li><a href="#"><i class="icono izq fa fa-user"></i>Usuario<i class="icono der fa fa-chevron-down"></i></a>
 					<ul>
 						<li><a href="InfoCont.php">Datos de contacto</a></li>

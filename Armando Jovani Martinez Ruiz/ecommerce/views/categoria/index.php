@@ -32,7 +32,7 @@
     Utils::alertaClose();
     ?>
 
-<?php if(isset($_SESSION['error'])):?>
+    <?php if(isset($_SESSION['error'])):?>
     <div class="row">
         <div class="col-5">
             <div class="alert alert-warning" role="alert">
@@ -48,32 +48,34 @@
 
     <div class="row">
         <div class="col mb-3">
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Acciones</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- lista las categorias  -->
-                    <?php while($categoria = $categorias->fetch_object()):?>
-                    <tr>
-                        <th scope="row"><?=$categoria->id?></th>
-                        <td><?=$categoria->nombre?></td>
-                        <td><a class="text-decoration-none btn btn-primary"
-                                href="<?=base_url?>categoria/viewUpdate&id=<?=$categoria->id?>"><i
-                                    class="fas fa-pencil-alt"></i> Editar</a></td>
-                        <td><a class="text-decoration-none btn btn-danger"
-                                href="<?=base_url?>categoria/delete&id=<?=$categoria->id?>"><i
-                                    class="fas fa-trash-alt"></i> Eliminar</a></td>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Acciones</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- lista las categorias  -->
+                        <?php while($categoria = $categorias->fetch_object()):?>
+                        <tr>
+                            <th scope="row"><?=$categoria->id?></th>
+                            <td><?=$categoria->nombre?></td>
+                            <td><a class="text-decoration-none btn btn-primary"
+                                    href="<?=base_url?>categoria/viewUpdate&id=<?=$categoria->id?>"><i
+                                        class="fas fa-pencil-alt"></i> Editar</a></td>
+                            <td><a class="text-decoration-none btn btn-danger"
+                                    href="<?=base_url?>categoria/delete&id=<?=$categoria->id?>"><i
+                                        class="fas fa-trash-alt"></i> Eliminar</a></td>
 
-                    </tr>
-                    <?php endwhile?>
-                </tbody>
-            </table>
+                        </tr>
+                        <?php endwhile?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
