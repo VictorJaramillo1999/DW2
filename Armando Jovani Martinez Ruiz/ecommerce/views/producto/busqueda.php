@@ -16,7 +16,7 @@
 
 
 <div class="main" id="contenido">
-    <h5 class="ml-5 mb-5">Busqueda: <strong><?=$texto?></strong></h5>
+    <h5 class="ml-5 mb-5">Búsqueda: <strong><?=$texto?></strong></h5>
     <section class="products mb-5">
 
         <?php while($producto = $productos->fetch_object() ):?>
