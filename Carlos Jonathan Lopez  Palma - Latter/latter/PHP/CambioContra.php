@@ -83,15 +83,17 @@
                             <div class="form-group col-md-6">
 								<label class="control-label" for="conta">Contraseña actual</label>
 								<input class="control-llenarin" type="password" 
-								   id="conta" name="conta">
+								   id="conta" name="conta" required>
 							</div>
                             <div class="form-group col-md-6">
                                 <label class="control-label">Nueva contraseña</label>
-                                <input class="form-control" type="password" data-toggle="password" name="nco" id="nco"/>
+                                <input class="form-control" type="password" data-toggle="password" 
+									name="nco" id="nco" required>
                             </div>
                             <div class="form-group col-md-6">
 								<label class="control-label">Repita contraseña</label>
-                                <input class="form-control" type="password" data-toggle="password" name="rco" id="rco"/>
+                                <input class="form-control" type="password" data-toggle="password" 
+									name="rco" id="rco" required>
                             </div>
                             <br>
                             <div class="">

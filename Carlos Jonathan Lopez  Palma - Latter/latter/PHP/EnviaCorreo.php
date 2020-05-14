@@ -21,13 +21,9 @@
     
         //Avisar si fue enviado o no y dirigir al index
         if ($mail->Send()) {
-            echo'<script type="text/javascript">
-                alert("Enviado Correctamente");
-                </script>';
+            echo'Enviado Correctamente';
         } else {
-            echo'<script type="text/javascript">
-                alert("NO ENVIADO, intentar de nuevo");
-                </script>';
+            echo'NO ENVIADO, intentar de nuevo';
         }
     }
     

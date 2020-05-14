@@ -49,18 +49,9 @@
 			$fe = strtotime($fechana);
 			$usuario=substr($nombres,0,3).substr($app,0,3).date('md',$fe);
 			$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_";
-			$query="SELECT CONTRASENA FROM cuentas WHERE CONTRASENA = '$contra'";
-			$result=mysqli_query($con,$query);
-			$contbd=mysqli_fetch_array($result);
-			$flag=true;
-			while($flag){
-				$contra = "";
-				for($i=0;$i<11;$i++) {
-					$contra .= substr($str,rand(0,64),1);
-				}
-				if($contra!=$contbd){
-					$flag=false;
-				}
+			$contra="";
+			for($i=0;$i<11;$i++) {
+				$contra .= substr($str,rand(0,64),1);
 			}
 			$passHash = password_hash($contra, PASSWORD_DEFAULT);
 			$quaery="INSERT INTO cuentas VALUES('$idp','$usuario','$passHash')";
