@@ -1,5 +1,11 @@
 /*Globales: codigo que se usara con frecuencia*/
 
+.contenedor-vertical {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
 .contenedor {
     width: 100%;
     max-width: 120rem;
@@ -127,12 +133,6 @@ textarea {
 
 /*Estilos para la barra lateral de botones*/
 
-
-/*1 alineamos los botones de forma horizontal*/
-
-
-/*agregamos el estilo para los botones*/
-
 #navegador ul {
     list-style-type: none;
     text-align: center;
@@ -145,8 +145,8 @@ textarea {
 }
 
 #navegador li a {
-    padding: 0.2rem 0.7rem 0.2rem 0.7rem;
-    color: #666;
+    padding: 0.2rem 0.7rem;
+    color: #666666;
     background-color: #eeeeee;
     border: 1px solid #ccc;
     text-decoration: none;
