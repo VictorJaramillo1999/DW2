@@ -57,6 +57,7 @@ class PedidoController{
     public function ver(){
         
 
+        //Obtiene pedidos solo del usuario
         if(isset($_SESSION['usuario']) && !isset($_SESSION['admin'])){
             $id = $_SESSION['usuario']->id;
 
@@ -68,15 +69,25 @@ class PedidoController{
             if($pedidos == true){
                 require_once 'views/pedido/pedidos.php';
             }
+
+            //Obtiene pedidos del administrador
         }else if (isset($_SESSION['usuario']) && isset($_SESSION['admin'])){
 
             $pedido = new Pedido();
     
-            $pedidos = $pedido->getAll();
-    
-            if($pedidos == true){
-                require_once 'views/pedido/pedidosAdmin.php';
+            if(!isset($_GET['filtrar'])){
+                $pedidos = $pedido->getAll();
+            }else if(isset($_GET['filtrar'])){
+
+                $filtrar = $_GET['filtrar'];
+
+                $pedido->setPaqueteria($filtrar);
+                $pedidos = $pedido->getAllByEstatus();
+         
             }
+           
+                require_once 'views/pedido/pedidosAdmin.php';
+            
 
         }else{
             header('Location:'.base_url);

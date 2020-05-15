@@ -237,5 +237,24 @@ public function updateEstatus(){
           return false;
     }
 }
+
+
+//Obtiene los pedidos de acuerdo al estatus de la paqueteria
+public function getAllByEstatus(){
+    $result = false;
+
+    $estatus = $this->paqueteria;
+
+
+    $sql= "SELECT * FROM pedidos WHERE paqueteria='$estatus' ORDER BY id DESC ";
+    $consulta = $this->db->query($sql);
+
+    if($consulta==true){
+       $result = $consulta;
+    }
+    
+    return $result;
+}
+
 }
 ?>

@@ -7,6 +7,28 @@
         </div>
     </div>
 
+
+
+
+    <div class="row">
+        <div class="col mb-5 d-flex justify-content-end">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Filtrar por
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <a class="dropdown-item" href="<?=base_url?>Pedido/ver">Mostrar todo</a>
+                    <a class="dropdown-item" href="<?=base_url?>Pedido/ver&filtrar=Pendiente">Pendiente</a>
+                    <a class="dropdown-item" href="<?=base_url?>Pedido/ver&filtrar=En preparacion">En preparación</a>
+                    <a class="dropdown-item" href="<?=base_url?>Pedido/ver&filtrar=Empacado">Empacado</a>
+                    <a class="dropdown-item" href="<?=base_url?>Pedido/ver&filtrar=Enviado">Enviado</a>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <?php if(isset($_SESSION['confirmado'])):?>
 

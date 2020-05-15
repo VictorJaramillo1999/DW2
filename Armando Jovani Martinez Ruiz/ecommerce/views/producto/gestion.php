@@ -1,3 +1,5 @@
+<?php require_once 'controllers/categoriaController.php'; ?>
+
 <div class="container">
     <div class="row">
         <div class="col-12 mb-3">
@@ -8,10 +10,27 @@
     </div>
 
     <div class="row">
-        <div class="col mb-5">
+        <div class="col mb-5 d-flex justify-content-between">
             <a href="<?=base_url?>Producto/crear" class="btn btn-success mb-2">Agregar Producto</a>
+
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Filtrar por
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <a class="dropdown-item" href="<?=base_url?>Producto/gestion">Mostrar todo</a>
+                    <?php   $categoria = new Categoria();
+                     $categorias = $categoria->getAll();
+                     while($categoria = $categorias->fetch_object()):?>
+                    <a class="dropdown-item" href="<?=base_url?>Producto/gestion&ordenar=<?=$categoria->id?>"><?=$categoria->nombre?></a>
+                    <?php endwhile?>
+                </div>
+            </div>
         </div>
     </div>
+
+
 
     <!-- //Alertas -->
     <?php if(isset($_SESSION['confirmado'])):?>
@@ -59,7 +78,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- lista las categorias  -->
+                        <!-- lista los productos  -->
                         <?php while($producto = $productos->fetch_object()):?>
                         <tr>
                             <th><?=$producto->nombre?></th>
@@ -67,7 +86,8 @@
                             <td>$ <?=$producto->precio?></td>
                             <td>Cant. <?=$producto->stock?></td>
                             <td><img style="width:150px" src="<?=base_url?>uploads/images/<?=$producto->imagen?>"
-                                    alt=""></td>
+                                    alt="">
+                            </td>
 
 
                             <td> <a class="text-decoration-none btn btn-primary"
@@ -84,4 +104,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

@@ -23,7 +23,18 @@ class ProductoController{
         Utils::isAdmin();
 
         $producto = new Producto();
-        $productos = $producto->getAll();
+
+        //Si no recibe una categoria en particular manda todos los productos.
+        if(!isset($_GET['ordenar'])){
+            $productos = $producto->getAll();
+
+        }else if(isset($_GET['ordenar'])){
+
+            $categoria_ordenar = $_GET['ordenar'];
+            $producto->setCategoria_id($categoria_ordenar);
+            $productos = $producto->getVer();
+        }
+      
         require_once 'views/producto/gestion.php';
     }
      
