@@ -1,7 +1,9 @@
 /*Globales: codigo que se usara con frecuencia*/
 
-.contenedor-menu {
-    max-height: 30%;
+.contenedor-vertical {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
 }
 
 .contenedor {
@@ -131,33 +133,26 @@ textarea {
 
 /*Estilos para la barra lateral de botones*/
 
-.vertical-menu {
-    width: 20rem;
-    height: 50rem;
+#navegador ul {
+    list-style-type: none;
+    text-align: center;
 }
 
-.vertical-menu a {
-    background-color: #eee;
-    color: #111111;
-    /*Hacemos que los botones se pongan uno debajo del otro*/
-    display: block;
-    padding: 1.2rem;
+#navegador li {
+    display: inline;
+    text-align: center;
+    margin: 0 1rem 0 0;
+}
+
+#navegador li a {
+    padding: 0.2rem 0.7rem;
+    color: #666666;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
     text-decoration: none;
 }
 
-.vertical-menu a:hover {
-    background-color: #e08709;
-    /*Hacemos que el color del boton se ponga amarillo*/
-}
-
-.vertical-menu a.active {
-    background-color: yellowgreen;
-    color: white;
-}
-
-.ajustar-imagen img {
-    /*top, right, bottom, left*/
-    padding: 2rem 6.5rem 0 6.5rem;
-    width: 120px;
-    height: 120px;
+#navegador li a:hover {
+    background-color: #333333;
+    color: #ffffff;
 }

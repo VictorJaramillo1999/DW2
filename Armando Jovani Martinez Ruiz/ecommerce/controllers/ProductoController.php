@@ -10,7 +10,6 @@ class ProductoController{
         $producto = new Producto();
         $productos = $producto->getRand(8);
 
-        
         $categoria = new Categoria();
         $categorias = $categoria->getAll();
 
@@ -166,13 +165,12 @@ class ProductoController{
             $producto = new Producto();
             $producto->setId($id);
 
-            $delete = $producto->delete();
+            $producto->delete();
 
-           
-            if($delete == true ){
+            if($producto == true ){
                 $_SESSION['confirmado']="Producto eliminado";
             }else{
-                $_SESSION['error']="Error al eliminar el producto ya que esta dentro de un pedido";
+                $_SESSION['error']="Error al eliminar el producto";
             }
         }
 
@@ -215,17 +213,6 @@ class ProductoController{
 
     }
 
-    //Resta stock cuando se venda un producto
-    public function updateStock($id,$unidades){
-
-        $id_producto = $id;
-        $unidades_producto = $unidades;
-
-        $producto = new Producto();
-
-        $producto->updateStock($id_producto,$unidades_producto);
-
-    }
 }
 
 ?>

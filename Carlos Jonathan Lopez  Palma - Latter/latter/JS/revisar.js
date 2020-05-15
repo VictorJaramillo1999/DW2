@@ -334,3 +334,27 @@ function encore(){
     });
     return false;
 }
+function rerep() {
+    var form = document.form1;
+    if (form.emp.value === " ") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning"><a href="" class="close" data-dismiss="alert">&times;</a>Selecciona un enpleado.</div>'; 
+        form.emp.focus();
+        return false;
+    }
+    emp = document.getElementById('emp').value;
+    causa = document.getElementById('causa').value;
+    dataen = 'emp='+emp+'&causa='+causa;
+    $.ajax({
+        type:'post',
+        url:'RegistraRep.php',
+        data:dataen,
+        success:function(resp){
+            if(resp=="si"){
+                document.getElementById("alerta2").innerHTML='<div class="alert alert-success"><a href="" class="close" data-dismiss="alert">&times;</a>Reporte registrado.</div>'; 
+            }else location.href="Reportesphp.php";
+        }
+        
+    });
+    
+    return false;
+}
