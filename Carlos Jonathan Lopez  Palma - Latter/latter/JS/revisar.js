@@ -41,7 +41,6 @@ function validar(){
     var correo = document.getElementById("email").value;
     var form = document.form1;
     var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    
     if (form.nombres.value === "") {
         document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Ingresa el Nombre.</div>';
         form.nombres.focus();
@@ -122,7 +121,6 @@ function validar(){
         form.diadesc.focus();
         return false;
     }
-    
     var nombres = document.getElementById('nombres').value;
     var app = document.getElementById('app').value;
     var apm = document.getElementById('apm').value;
@@ -141,12 +139,12 @@ function validar(){
     var diadesc = document.getElementById('diadesc').value;
 
     var dataen = 'nombres='+nombres+'&app='+app+'&apm='+apm+'&fechana='+fechana+'&sexo='+sexo+'&curp='+curp+'&rfc='+rfc+'&direc='+direc+'&tel='+tel+'&email='+email+'&nseg='+nseg+'&puesto='+puesto+'&horae='+horae+'&horas='+horas+'& diadesc='+diadesc;
-    
     $.ajax({
         type:'post',
-        url:'PHP/RegistraPersona.php',
+        url:'RegistraPersona.php',
         data:dataen,
         success:function(resp){
+            alert(resp);
             if(resp==="false"){
                 document.getElementById("alerta").innerHTML='<div class="alert alert-danger"><a href="" class="close" data-dismiss="alert">&times;</a>Persona ya registrada</div>';  
             }else if(resp==="crepetido"){
@@ -306,7 +304,7 @@ function iguales(){
 
 function revcote(){
     var form = document.form1;
-    if(form.email.value==="charly.palma99@gmail.com"){
+    if(form.email.value===""){
         document.getElementById("alerta").innerHTML='<div class="alert alert-warning">Llene todos los campos.</div>';
         form.email.focus();
         return false;
@@ -324,7 +322,7 @@ function encore(){
     var dataen = 'email='+email;
     $.ajax({
         type:'post',
-        url:'PHP/RecuperaPassEnCo.php',
+        url:'RecuperaPassEnCo.php',
         data:dataen,
         success:function(resp){
             alert(resp);
@@ -334,5 +332,29 @@ function encore(){
             
         }
     });
+    return false;
+}
+function rerep() {
+    var form = document.form1;
+    if (form.emp.value === " ") {
+        document.getElementById("alerta").innerHTML='<div class="alert alert-warning"><a href="" class="close" data-dismiss="alert">&times;</a>Selecciona un enpleado.</div>'; 
+        form.emp.focus();
+        return false;
+    }
+    emp = document.getElementById('emp').value;
+    causa = document.getElementById('causa').value;
+    dataen = 'emp='+emp+'&causa='+causa;
+    $.ajax({
+        type:'post',
+        url:'RegistraRep.php',
+        data:dataen,
+        success:function(resp){
+            if(resp=="si"){
+                document.getElementById("alerta2").innerHTML='<div class="alert alert-success"><a href="" class="close" data-dismiss="alert">&times;</a>Reporte registrado.</div>'; 
+            }else location.href="Reportesphp.php";
+        }
+        
+    });
+    
     return false;
 }

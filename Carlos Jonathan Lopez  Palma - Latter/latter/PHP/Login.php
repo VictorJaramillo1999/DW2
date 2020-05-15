@@ -37,7 +37,7 @@ session_start();
 					$_SESSION['puesto'] = $mostrar['PUESTO'];
 					$_SESSION['id'] = $mostrar['ID'];
 					$_SESSION['start'] = time();
-					$_SESSION['expire'] = $_SESSION['start'] + (2 * 60) ;						
+					$_SESSION['expire'] = $_SESSION['start'] + (10 * 60) ;						
 										
 					if($_SESSION['puesto']=="ADMINISTRADOR"){
 						header('Location: /latter/PHP/InicioAdmin.php');

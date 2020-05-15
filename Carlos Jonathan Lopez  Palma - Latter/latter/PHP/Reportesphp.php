@@ -1,5 +1,6 @@
 <?php
-    session_start();
+	session_start();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,45 +69,82 @@
 			<div class="content">
                 <h3 class="encabezado" align="center" style="color:#930707;">Lista de reportes</h3>
 				<hr>
-				<div id="alerta" class="alerta"></div>
-				<div>
-					<table class="tabla" id="t01">
+				<div class="">
+				<div id="alerta"></div>
+					<table class="tabla" id="t01" >
+						<thead>
+							<tr>
+								<th class="id">ID</th><th class="no">Nombre</th>
+								<th class="de">Descripción</th><th class="fe">Fecha</th>
+								<th class="ho">Hora</th><th class="ac">Acción</th>
+							</tr>
+						<thead>
 						<tbody>
-                    	<tr>
-                        	<th style="width:100px;">ID</th><th style="width:650px;">Nombre</th> <th>Descripción</th><th>Fecha</th><th style="width:100px;">Hora</th><th style="width:30px;">Acción</th>
-                    	</tr>
-                    	<tr class="fila">
-                    	</tr>
-						<?php
-							include("ConBD.php");
-							$con=conectar();
-							if (!$con) {
-								die("Connection failed: " . mysqli_connect_error());
-							}
-						
-							$query="SELECT p.ID, p.NOMBRE, p.APELLIDOPA, p.APELLIDOMA, r.DESCRIPCION, r.FECHA, r.HORA FROM reportes r INNER JOIN persona p ON r.IDPERSONA = p.ID";
-							$result=mysqli_query($con,$query);
-							while ($mostrar = mysqli_fetch_array($result)) {
-						?>
-								<tr class="fila">
-									<td class="tdm"><?php echo $mostrar['ID'] ?></td>
-									<td class="td"><?php echo $mostrar['NOMBRE']." ".$mostrar['APELLIDOPA']." ".$mostrar['APELLIDOMA'] ?></td>
-									<td class="treport"><?php echo $mostrar['DESCRIPCION'] ?></td>
-									<td class="td"><?php echo $mostrar['FECHA'] ?></td>
-									<td class="td"><?php echo $mostrar['HORA'] ?></td>
-									<td><button class="btn btn-danger fas fa-trash-alt"></button></td>
-								</tr>
-						<?php
-							}
-						?>
-					</tbody>
-                </table>
+							<?php
+								include("ConBD.php");
+								$con=conectar();
+								if (!$con) {
+									die("Connection failed: " . mysqli_connect_error());
+								}
+								$query="SELECT p.ID, p.NOMBRE, p.APELLIDOPA, p.APELLIDOMA, r.DESCRIPCION, r.FECHA, r.HORA FROM reportes r INNER JOIN persona p ON r.IDPERSONA = p.ID";
+								$result=mysqli_query($con,$query);
+								while ($mostrar = mysqli_fetch_array($result)) {
+							?>
+							<tr class="fila">
+								<td class="id"><?php echo $mostrar['ID'] ?></td>
+								<td class="no"><?php echo $mostrar['NOMBRE']." ".$mostrar['APELLIDOPA']." ".$mostrar['APELLIDOMA'] ?></td>
+								<td class="de treport"><?php echo $mostrar['DESCRIPCION'] ?></td>
+								<td class="fe"><?php echo $mostrar['FECHA'] ?></td>
+								<td class="ho"><?php echo $mostrar['HORA'] ?></td>
+								<td class="ac"><button class="btn btn-danger fas fa-trash-alt"></button></td>
+							</tr>
+							<?php
+								}
+							?>
+						</tbody>
+					</table>
+					<hr>
 				</div>
-                
+                <div>
+					<h4 style="color:#930707;"align="center">Registrar reporte</h4>
+					<div id="alerta2"></div>
+					<form name="form1" method="post" action="" onsubmit="return rerep()" class="fondo">
+						<div class="form-group col-md-5">
+							<label class="control-label" for="conta">Empleado</label>
+								<select class="control-llenarin" type="text" id="emp" name="emp" required>
+									<option value=" "> </option>
+								<?php 
+									$query="SELECT ID, NOMBRE, APELLIDOPA, APELLIDOMA FROM persona";
+									$result=mysqli_query($con,$query);
+									while ($mostrar = mysqli_fetch_array($result)) {
+										$datos=$mostrar['ID']." - ".$mostrar['NOMBRE']." ".$mostrar['APELLIDOPA']." ".$mostrar['APELLIDOMA'];
+								?>
+										<option value="<?php echo $datos?>"><?php echo $datos?></option>
+								<?php
+									}
+								?>
+								</select>
+						</div>
+						<div class="form-group col-md-5">
+							<label class="control-label" for="diadesc">Reporte</label>
+							<select class="control-llenarin" name="causa" id="causa" required>
+								<option value="AUSENTE">AUSENTE</option>
+								<option value="RETARDO">RETARDO</option>
+								<option value="RETIRO TEMPRANO">RETIRO TEMPRANO</option>
+							</select>
+						</div>
+						<div class="col-md-4" style="margin-left: 30px;">
+                            <input type="submit" value="Generar reporte" class="btn btn-primary btn-lg" onsubmit="">
+                    	</div>
+					</form>
+					<br>
+				</div>
+
 			</div>
         </div>
         
 	</body>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="/latter/JS/main.js"></script>
+	<script src="/latter/JS/revisar.js"></script>
 </html>

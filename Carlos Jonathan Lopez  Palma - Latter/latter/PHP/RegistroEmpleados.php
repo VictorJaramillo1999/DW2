@@ -212,5 +212,4 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="/latter/JS/main.js"></script>
 	<script src="/latter/JS/revisar.js"></script>
-	<script src="/latter/JS/alertas.js"></script>
 </html>
